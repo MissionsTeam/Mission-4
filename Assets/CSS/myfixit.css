@@ -216,6 +216,29 @@ img {
   border: 1px solid var(--color-secondary);
 }
 
+/* SUBMIT BUTTON */
+
+.submit-report-wrapper {
+  margin: 20px 0;
+  text-align: left;
+}
+
+.btn-submit-report {
+  background-color: var(--color-secondary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: var(--font-weight-semibold);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit-report:hover {
+  background-color: #65a12c;
+}
+
 /* MYFIXIT POINTS CARD */
 
 .section-card.points {
