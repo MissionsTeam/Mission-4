@@ -128,7 +128,7 @@ img {
   width: 20vw;
   height: calc(100vh - 100px);
     /* BODY LEFT - BG Image */
-      background: url("/Mission-4/Assets/Images/images.jpg") center/cover no-repeat;
+      background: url("/Mission-4/Assets/Images/Mountains.jpg") center/cover no-repeat;
   border-radius: 0 100px 0 0;
   flex-shrink: 0;
   z-index: 0;
@@ -145,7 +145,7 @@ img {
   position: relative;
   height: fit-content;
     /* HERO SECTION - BG Image */
-      background: url("/Mission-4/Assets/Images/images.jpg") center/cover no-repeat;
+      background: url("/Mission-4/Assets/Images/Walk.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: left;
@@ -211,24 +211,66 @@ img {
 .section-card.introduction {
   background: var(--color-secondary-light);
   border: 1px solid var(--color-secondary);
-  
 }
 
 .section-card h2 {
   font-size: var(--font-size-h2);
   color: var(--color-primary);
   font-weight: var(--font-weight-bold);
+  margin-bottom: 0.5rem;
 }
 
 .section-card p {
   font-size: var(--font-size-p);
   color: var(--color-text-primary);
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 1.5rem;
 }
 
 .section-card strong {
   color: var(--color-primary);
   font-weight: var(--font-weight-bold);
+}
+
+.flex-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 15px; /* spacing between items */
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  aspect-ratio: 1 / 1;
+
+  background: var(--color-white);
+  color: var(--color-primary);
+  text-decoration: none;
+  padding: 12px;
+  font-weight: var(--font-weight-semibold);
+
+  border-radius: 10px;
+  border: 1px solid var(--color-secondary-dark);
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+
+.item:hover {
+  background: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.item strong {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  transition: color 0.5s ease-in-out;
+}
+
+.item:hover strong {
+  color: var(--color-white);
 }
 
 /* LIST STYLES */
@@ -363,32 +405,58 @@ li::marker {
 
 /* DESKTOP RESPONSIVENESS */
 @media (max-width: 1024px) {
+  /* Layout adjustments */
   .main-body {
     flex-direction: column;
     height: auto;
     margin-top: 100px; /* Keep Below Header */
   }
+
+  /* Left image panel: full width, no sticky */
   .body-left {
-    flex: 0 0 auto;
-    height: 300px;
     position: relative;
-    top: 0;
+    top: auto;
+    width: 100vw;
+    height: 250px;
     border-radius: 0 0 20px 20px;
-    background-position: center top;
+    background-position: center center;
+    margin-bottom: 1rem;
   }
+
+  /* Content area full width */
   .body-right {
     flex: 1 1 auto;
     height: auto;
     overflow-y: visible;
     padding: 16px;
+    width: 100%;
   }
+
+  /* Header adjustments */
+  .header {
+    height: auto;       /* allow header height to grow */
+    padding: 10px 0;    /* vertical padding */
+  }
+
+  /* Header inner: wrap and gap */
   .header-inner {
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 12px;
+    align-items: center;
   }
+
+  /* Search bar full width */
   .search-bar {
     width: 100%;
   }
+
+  /* Hide the search button */
+  .search-bar button {
+    display: none;
+  }
+
+  /* Hero section adjustments */
   .hero {
     justify-content: center;
     text-align: center;
@@ -396,18 +464,56 @@ li::marker {
     margin-left: 0;
     margin-right: 0;
   }
+
   .hero-content {
     margin-left: 0;
     padding: 0 16px;
     max-width: 100%;
   }
+
   .hero h1 {
     font-size: 2.2rem;
   }
+
   .hero h2 {
     font-size: 1.6rem;
   }
+
   .section-card h3 {
     font-size: 20px;
   }
+
+  /* Nav buttons responsive wrap */
+  .nav-buttons {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+    flex: 1 1 100%;
+    max-width: 400px;
+  }
+
+  .nav-btn {
+    flex: 1 1 auto;
+    min-width: 100px;
+    text-align: center;
+    padding: 6px 10px;
+    font-size: 13px;
+  }
 }
+
+/* TABLET AND BELOW */
+@media (max-width: 768px) {
+  .flex-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .flex-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
