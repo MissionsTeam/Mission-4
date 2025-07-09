@@ -1,0 +1,41 @@
+:root {                     /* STYLESHEET */
+  
+  /* FONTS */
+  --font-family-base: 'Inter', sans-serif;
+
+  /* FONT SIZES */           /* USE FOR */
+  --font-size-title: 3.5rem; /* Big Hero */
+  --font-size-h1: 2.8rem;    /* Main Page Title */
+  --font-size-h2: 2rem;      /* Section Heading */
+  --font-size-h3: 1.5rem;    /* Subsection Title */
+  --font-size-p: 1rem;       /* Paragraph/Body Text */
+
+  /* FONT WEIGHTS */
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;
+
+  /* COLOUR STYLES */
+  --color-primary: #2c5aa0;         /* Dark Blue */
+  --color-secondary: #7bc142;       /* Green */
+  --color-secondary-dark: #5a9c2a;  /* Dark Green */
+  --color-secondary-light: #d1f0d1; /* Light Green */
+  --color-text-primary: #222222;
+  --color-text-light: #666666;
+  --color-background: #e0e0e0;
+  --color-white: #ffffff;
+
+  /* SHADOWS */
+  --shadow-light: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-strong: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+  /* GRADIENTS */
+  --gradient-blue: linear-gradient(90deg, #1b3a70 0%, #2c5aa0 38%, rgba(43, 88, 156, 0.5) 70%, rgba(43, 88, 156, 0) 100%);
+  --gradient-green: linear-gradient(90deg, #5a9c2a 0%, #7bc142 38%, rgba(123, 193, 66, 0.5) 70%, rgba(123, 193, 66, 0) 100%);
+  --gradient-black: linear-gradient(90deg, #000000 0%, #222222 38%, rgba(34, 34, 34, 0.5) 70%, rgba(34, 34, 34, 0) 100%);
+  --gradient-white: linear-gradient(90deg, #eeeeee 0%, #ffffff 38%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0) 100%);
+
+}
