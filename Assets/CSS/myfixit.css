@@ -128,7 +128,7 @@ img {
   width: 20vw;
   height: calc(100vh - 100px);
     /* BODY LEFT - BG Image */
-      background: url("/Mission-4/Assets/Images/images.jpg") center/cover no-repeat;
+      background: url(/Mission-4/Assets/Images/Mountains.jpg) center/cover no-repeat;
   border-radius: 0 100px 0 0;
   flex-shrink: 0;
   z-index: 0;
@@ -145,7 +145,7 @@ img {
   position: relative;
   height: fit-content;
     /* HERO SECTION - BG Image */
-      background: url("/Mission-4/Assets/Images/images.jpg") center/cover no-repeat;
+      background: url(/Mission-4/Assets/Images/Walk.jpg) center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: left;
@@ -154,6 +154,10 @@ img {
   overflow: hidden;
   border-radius: 10px 100px 10px 10px;
   margin-bottom: 1rem;
+}
+
+.hero title {
+  font-size: var(--font-size-title);
 }
 
 /* HERO SECTION - Gradient */
@@ -171,6 +175,7 @@ img {
   flex-direction: column;
   z-index: 2;
   margin-left: 2rem;
+  margin-bottom: 1rem;
   gap: 0.25rem; 
 }
 
@@ -189,13 +194,11 @@ img {
   margin-top: 0;
 }
 
-.hero-quote {
+.hero-subtitle {
   font-size: var(--font-size-h3);
   font-weight: var(--font-weight-regular);
   margin-top: 0; 
-  margin-bottom: 2rem;
 }
-
 /* MAIN CONTENT */
 
 /* SECTION CONTENT - Parent Section Card*/
@@ -208,16 +211,20 @@ img {
 }
 
 /* SECTION CONTENT - Child Section Cards (Modified Versions) */
-.section-card.introduction {
+.section-card.green {
   background: var(--color-secondary-light);
   border: 1px solid var(--color-secondary);
   
 }
 
-.section-card h2 {
-  font-size: var(--font-size-h2);
+.section-card h1 {
+  font-size: var(--font-size-h1);
   color: var(--color-primary);
-  font-weight: var(--font-weight-bold);
+  margin-bottom: .5rem;
+}
+
+.section-card h2 {
+  color: var(--color-primary);
 }
 
 .section-card p {
@@ -229,6 +236,34 @@ img {
 .section-card strong {
   color: var(--color-primary);
   font-weight: var(--font-weight-bold);
+}
+
+
+.flex-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; 
+  justify-content: flex-start;
+}
+
+.item {
+  width: calc(33.333% - 11px);
+  min-width: 200px; /* ensures they don't shrink below this */
+  max-width: 100%;
+  background: #f4f4f4;
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: solid var(--color-secondary-dark) 1px;
+}
+
+.item h2 {
+  color: var(--color-primary);
+  font-size: var();
+}
+
+.item em {
+  color: var(--color-secondary-dark);
+  font-weight: var(--font-weight-semibold);
 }
 
 /* LIST STYLES */
@@ -262,12 +297,21 @@ li::marker {
   background: var(--color-secondary-dark);
 }
 
+.badge {
+  background-color: var(--color-secondary-dark);
+  color: white;
+  padding: 5px 25px;
+  text-align: center;
+  border-radius: 25px;
+  margin-right: 1rem;
+}
+
 /* FOOTER */
 .footer {
   width: 100%;
   background: var(--color-secondary-dark);
   color: var(--color-white);
-  padding: 40px 24px;
+  padding: 40px 40px;
   border-radius: 0 100px 0 0;
   font-size: var(--font-size-p);
 }
@@ -411,3 +455,4 @@ li::marker {
     font-size: 20px;
   }
 }
+
