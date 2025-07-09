@@ -10,7 +10,7 @@ Our Mission 4 - Building a webapp to report different issues around our communit
 |--------------|------------------------------------------------------|
 | Amina        | `index.html`, `testimonials.html`                    |
 | Morah        | `login.html`, `myfixit.html`, `categories.html`      |
-| David        | `report.html`, `survey.html`                         |
+| David        | `category-details.html`, `report.html`, `survey.html`                         |
 
 Each person is responsible for both the HTML structure and the CSS styling of their assigned pages using the global.css stylesheet.
 
