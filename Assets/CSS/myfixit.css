@@ -67,7 +67,7 @@ img {
   flex: 1;
   display: flex;
   max-width: 400px;
-  background: #e8f5e8;
+  background: var(--color-secondary-light);
   border: 1px solid var(--color-secondary);
   border-radius: 20px;
   overflow: hidden;
@@ -118,7 +118,7 @@ img {
   width: 100%;
   min-height: calc(100vh - 100px);
   margin-top: 50px;
-  background-color: #e6e6e6;
+  background-color: var(--color-background);
 }
 
 /* BODY LEFT - Fixed Side Image */
@@ -247,6 +247,9 @@ img {
   line-height: 2rem;
   padding-bottom: 1rem;
   border: 1px solid var(--color-secondary);
+  background:
+  var(--gradient-green), 
+  var(--color-primary)
 }
 
 .section-card.points h1 {
@@ -255,7 +258,7 @@ img {
 
 .section-card.points h2 {
   font-size: var(--font-size-title);
-  color: var(--color-secondary)
+  color: var(--color-white)
 }
 
 .flex-container {
@@ -302,8 +305,8 @@ img {
   bottom: 0.75rem;
   right: 1rem;
   font-size: 0.85rem;
-  color: #2c5aa0;
-  font-weight: 500;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
   cursor: default;
   display: inline-flex;
   align-items: center;
@@ -312,7 +315,7 @@ img {
 }
 
 .report-link:hover {
-  border-bottom: 2px solid #2c5aa0;
+  border-bottom: 2px solid var(--color-primary);
 }
 
 .section-card h1 {
