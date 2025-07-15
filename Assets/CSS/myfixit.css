@@ -274,6 +274,7 @@ img {
   border-radius: 10px;
   border: solid var(--color-secondary-dark) 1px;
   transition: background-color 0.5s ease-in-out;
+  position: relative;
 }
 
 .item:hover{
@@ -293,6 +294,25 @@ img {
 
 .item h2 {
   color: var(--color-primary);
+}
+
+
+.report-link {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 1rem;
+  font-size: 0.85rem;
+  color: #2c5aa0;
+  font-weight: 500;
+  cursor: default;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: border-color 0.3s ease;
+}
+
+.report-link:hover {
+  border-bottom: 2px solid #2c5aa0;
 }
 
 .section-card h1 {
