@@ -4,7 +4,8 @@
   -webkit-font-smoothing: antialiased;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   font-family: var(--font-family-base);
@@ -127,8 +128,8 @@ img {
   top: 100px;
   width: 20vw;
   height: calc(100vh - 100px);
-    /* BODY LEFT - BG Image */
-      background: url("/Mission-4/Assets/Images/images.jpg") center/cover no-repeat;
+  /* BODY LEFT - BG Image */
+  background: url("Assets/Images/Rubbish.jpg") center/cover no-repeat;
   border-radius: 0 100px 0 0;
   flex-shrink: 0;
   z-index: 0;
@@ -145,13 +146,15 @@ img {
 .hero {
   position: relative;
   height: fit-content;
-    /* HERO SECTION - BG Image */
-      background: url("/Mission-4/Assets/Images/images.jpg") center/cover no-repeat;
+  /* HERO SECTION - BG Image */
+  background: url("/Images/Rubbish.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: left;
   text-align: left;
-  color: var(--color-white); /* Text Colour Will Be White Unless Overridden Below */
+  color: var(
+    --color-white
+  ); /* Text Colour Will Be White Unless Overridden Below */
   overflow: hidden;
   border-radius: 10px 100px 10px 10px;
   margin-bottom: 1rem;
@@ -172,28 +175,28 @@ img {
   flex-direction: column;
   z-index: 2;
   margin-left: 2rem;
-  gap: 0.25rem; 
+  gap: 0.25rem;
 }
 
 .hero h1 {
   font-size: var(--font-size-title);
   font-weight: var(--font-weight-bold);
   color: var(--color-secondary); /* Overridden Colour */
-  margin-bottom: 0rem; 
+  margin-bottom: 0rem;
   margin-top: 2rem;
 }
 
 .hero h2 {
   font-size: var(--font-size-h2);
   font-weight: var(--font-weight-bold);
-  margin-bottom: 0.25rem; 
+  margin-bottom: 0.25rem;
   margin-top: 0;
 }
 
 .hero-quote {
   font-size: var(--font-size-h3);
   font-weight: var(--font-weight-regular);
-  margin-top: 0; 
+  margin-top: 0;
   margin-bottom: 2rem;
 }
 
@@ -205,14 +208,13 @@ img {
   border-radius: 10px;
   box-shadow: var(--shadow-medium);
   margin-bottom: 1.2rem;
-  padding: 1rem 2rem 2rem 2rem
+  padding: 1rem 2rem 2rem 2rem;
 }
 
 /* SECTION CONTENT - Child Section Cards (Modified Versions) */
 .section-card.introduction {
   background: var(--color-secondary-light);
   border: 1px solid var(--color-secondary);
-  
 }
 
 .section-card h2 {
@@ -233,18 +235,20 @@ img {
 }
 
 /* LIST STYLES */
-.list-basic, .list-ordered {
+.list-basic,
+.list-ordered {
   padding-left: 20px;
   margin: 8px 0;
 }
 
-.list-basic li, .list-ordered li {
+.list-basic li,
+.list-ordered li {
   margin-bottom: 6px;
   font-size: var(--font-size-p);
 }
 
 li::marker {
-  color: var(--color-secondary-dark);  
+  color: var(--color-secondary-dark);
 }
 
 /* BODY BUTTONS */
@@ -408,7 +412,72 @@ li::marker {
   .hero h2 {
     font-size: 1.6rem;
   }
-  .section-card h3 {
-    font-size: 20px;
+}
+
+/* HAMBURGER MENU DEFAULT STYLE */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--color-secondary);
+}
+
+/* NAV HIDDEN UTILITY CLASS */
+.hidden {
+  display: none !important;
+}
+
+/* RESPONSIVE HAMBURGER NAVIGATION - 1024px and below */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1001;
   }
+
+  .nav-buttons {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background: var(--color-white);
+    padding: 12px 0;
+    border-top: 1px solid var(--color-secondary-light);
+  }
+}
+
+/* REPORT ISSUE DROPDOWN - Label and Select */
+.dropdown-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-p);
+}
+
+.dropdown-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-secondary);
+  background-color: var(--color-white);
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+  font-family: var(--font-family-base);
+}
+
+/* BUTTON CONTAINER */
+.dropdown-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* NEXT BUTTON (DISABLED) STYLE OVERRIDE */
+#next-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
