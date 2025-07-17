@@ -273,6 +273,10 @@ img {
   flex-grow: 1;
 }
 
+.category-icon {
+  margin-right: .5rem;
+}
+
 /* HOVER EFFECT */
 .report-card::after {
   content: "";
