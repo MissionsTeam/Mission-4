@@ -129,7 +129,6 @@ img {
   height: calc(100vh - 100px);
   /* BODY LEFT - BG Image */
   background: url(/Mission-4/Assets/Images/Rubbish.jpg) center/cover no-repeat;
-  background-position-x: 47%;
   border-radius: 0 100px 0 0;
   flex-shrink: 0;
   z-index: 0;

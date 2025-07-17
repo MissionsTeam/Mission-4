@@ -2,21 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />s
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FixIt - Let's Fix It!</title>
   <link rel="stylesheet" href="Assets/CSS/report.css" />
-  <link rel="stylesheet" href="Assets/CSS/globals.css">
+  <link rel="stylesheet" href="Assets/CSS/globals.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <script src defer ="script.js"></script>
+  <script src="script.js" defer></script>
 </head>
-</head>
+<body>
+  <div class="page-container">
     <!-- HEADER -->
     <header class="header">
       <div class="header-inner">
-        <img src="Assets/CSS/Images/Logo.png" alt="FixIt Logo" class="logo" />
+        <img src="/Mission-4/Assets/Images/Logo.png" alt="FixIt Logo" class="logo" />
         <div class="search-bar">
           <input type="text" placeholder="Search FixIt" />
           <a href="#" class="nav-btn login">Search</a>
@@ -30,15 +31,12 @@
 
     <!-- MAIN BODY -->
     <div class="main-body">
+      <!-- LEFT BODY -->
+      <div class="body-left"></div>
 
-    <!-- LEFT BODY -->
-      <div class="body-left">
-      </div>
-
-    <!-- RIGHT BODY -->
+      <!-- RIGHT BODY -->
       <div class="body-right">
-
-<!-- HERO SECTION -->
+        <!-- HERO SECTION -->
         <section class="hero">
           <div class="hero-overlay"></div>
           <div class="hero-content">
@@ -47,122 +45,114 @@
           </div>
         </section>
 
-      <!-- REPORT FORM SECTION -->
-<section class="section-card">
-  <form id="report-form">
-    <!-- Image Upload -->
-    <div class="form-group">
-      <label for="image-upload"><strong>Upload Image</strong></label>
-      <div class="upload-area" id="upload-area">
-        <input type="file" id="image-upload" accept="image/*" />
-        <div class="upload-buttons">
-          <button type="button" onclick="document.getElementById('image-upload').click()">Upload</button>
-          <button type="button" onclick="removeImage()">Remove</button>
-        </div>
-      </div>
-    </div>
+        <!-- REPORT FORM SECTION -->
+        <section class="section-card">
+          <form id="report-form">
+            <!-- Image Upload -->
+            <div class="form-group">
+              <label for="image-upload"><strong>Upload Image</strong></label>
+              <div class="upload-area" id="upload-area">
+                <input type="file" id="image-upload" accept="image/*" />
+                <div class="upload-buttons">
+                  <button type="button" onclick="document.getElementById('image-upload').click()">Upload</button>
+                  <button type="button" onclick="removeImage()">Remove</button>
+                </div>
+              </div>
+            </div>
 
-    <!-- Description -->
-    <div class="form-group">
-      <label for="description"><strong>Description</strong></label>
-      <textarea
-        id="description"
-        name="description"
-        rows="4"
-        maxlength="300"
-        placeholder="Enter a description..."
-        oninput="updateCounter('description')"
-        required
-      ></textarea>
-      <div class="char-counter" id="description-counter">0 / 300</div>
-    </div>
+            <!-- Description -->
+            <div class="form-group">
+              <label for="description"><strong>Description</strong></label>
+              <textarea
+                id="description"
+                name="description"
+                rows="4"
+                maxlength="300"
+                placeholder="Enter a description..."
+                oninput="updateCounter('description')"
+                required
+              ></textarea>
+              <div class="char-counter" id="description-counter">0 / 300</div>
+            </div>
 
-    <!-- Date -->
-    <div class="form-group">
-      <label for="report-date"><strong>Date</strong></label>
-      <input type="date" id="report-date" name="report-date" required />
-    </div>
+            <!-- Date -->
+            <div class="form-group">
+              <label for="report-date"><strong>Date</strong></label>
+              <input type="date" id="report-date" name="report-date" required />
+            </div>
 
-  <!-- Location Input -->
-<div class="form-group">
-  <label for="location"><strong>Location</strong></label>
-  <input type="text" id="location" name="location" placeholder="Enter or choose location" required />
-  <img src="" alt="" srcset="">
-  <div id="map" style="height: 300px; margin-top: 1rem;"></div>
-</div>
+            <!-- Location Input -->
+            <div class="form-group">
+              <label for="location"><strong>Location</strong></label>
+              <input type="text" id="location" name="location" placeholder="Enter or choose location" required />
+              <img src="" alt="" />
+              <div id="map" style="height: 300px; margin-top: 1rem;"></div>
+            </div>
 
-
-    <!-- Action Buttons -->
-    <div class="form-actions">
-      <button type="button" class="cta-btn" onclick="cancelReport()">Cancel Report</button>
-      <button type="submit" class="cta-btn" id="submit-report" disabled>Submit Report</button>
-    </div>
-  </form>
-</section>
-
-
-    </div> <!-- .body-right end -->
-
+            <!-- Action Buttons -->
+            <div class="form-actions">
+              <button type="button" class="cta-btn" onclick="cancelReport()">Cancel Report</button>
+              <button type="submit" class="cta-btn" id="submit-report" disabled>Submit Report</button>
+            </div>
+          </form>
+        </section>
+      </div> <!-- .body-right end -->
     </div> <!-- .main-body end -->
 
     <!-- FOOTER -->
-      <footer class="footer">
-        <div class="footer-inner">
-            
-    <!-- LEFT SECTION -->
-      <div class="section-left">
-        <div class="footer-title">
-          <i class="fa-solid fa-location-dot"></i>
-          <span>Visit Us</span>
-        </div>
+    <footer class="footer">
+      <div class="footer-inner">
+        <!-- LEFT SECTION -->
+        <div class="section-left">
+          <div class="footer-title">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Visit Us</span>
+          </div>
           <p class="footer-address">
             Raphoe House Level 1/8<br />
             Gloucester Park Road,<br />
             Onehunga, Auckland 1061
           </p>
+        </div>
+
+        <!-- CENTER SECTION -->
+        <div class="section-center">
+          <div class="footer-title">
+            <span>Need Help? Get In Touch</span>
+          </div>
+          <div class="contact-buttons">
+            <button class="contact-btn">
+              <i class="fa-solid fa-phone"></i>
+              <span>Phone</span>
+            </button>
+            <button class="contact-btn">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Email</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- RIGHT SECTION -->
+        <div class="section-right">
+          <div class="footer-title">
+            <i class="fa-solid fa-share-nodes"></i>
+            <span>Follow Us</span>
+          </div>
+          <div class="social-buttons">
+            <a class="social-btn" href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a class="social-btn" href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a class="social-btn" href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a class="social-btn" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
       </div>
+    </footer>
+  </div> <!-- .page-container end -->
 
-    <!-- CENTER SECTION -->
-    <div class="section-center">
-      <div class="footer-title">
-        <span>Need Help? Get In Touch</span>
-      </div>
-      <div class="contact-buttons">
-        <button class="contact-btn">
-          <i class="fa-solid fa-phone"></i>
-          <span>Phone</span>
-        </button>
-        <button class="contact-btn">
-          <i class="fa-solid fa-envelope"></i>
-          <span>Email</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- RIGHT SECTION-->
-    <div class="section-right">
-      <div class="footer-title">
-        <i class="fa-solid fa-share-nodes"></i>
-        <span>Follow Us</span>
-      </div>
-      <div class="social-buttons">
-        <a class="social-btn" href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        <a class="social-btn" href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a class="social-btn" href="#"><i class="fa-brands fa-youtube"></i></a>
-        <a class="social-btn" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-      </div>
-    </div>
-  </div>
-</footer>
-</div>  
-
-<script
-  src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap"
-  async
-  defer
-></script>
-
-
-
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap"
+    async
+    defer
+  ></script>
 </body>
 </html>
