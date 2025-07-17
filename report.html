@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <script src defer ="script.js"></script>
+  <script src ="script.js" defer></script>
 </head>
-</head>
+
     <!-- HEADER -->
     <header class="header">
       <div class="header-inner">
@@ -87,9 +87,20 @@
 <div class="form-group">
   <label for="location"><strong>Location</strong></label>
   <input type="text" id="location" name="location" placeholder="Enter or choose location" required />
-  <img src="" alt="" srcset="">
-  <div id="map" style="height: 300px; margin-top: 1rem;"></div>
+
+  <!-- Toggle Map Button 
+  <button type="button" class="cta-btn" id="toggle-map">Choose Location on Map</button>-->
+
+  <!-- MAP PLACE HOLDER IMAGE-->
+  <img src="Images/GMapsHolder.PNG" alt="GoogleMaps">
+
+  <!-- Hidden Map Container/FIX FOR MISSION X
+  <div id="map-container" style="display: none; margin-top: 1rem;">
+    <div id="map-interactive" style="height: 300px;"></div>
+  </div>-->
 </div>
+
+
 
 
     <!-- Action Buttons -->
@@ -156,11 +167,13 @@
 </footer>
 </div>  
 
+<!-- MAP API TO FINISH FOR MISSION X
 <script
-  src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqSjugcn-P_-pt2ZVVyMAdxvJXW6tIvck&libraries=places&callback=initMap"
   async
   defer
-></script>
+  callback="initMap"
+></script> -->
 
 
 
