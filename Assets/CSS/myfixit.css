@@ -131,7 +131,7 @@ img {
   width: 20vw;
   height: calc(100vh - 100px);
   /* BODY LEFT - BG Image */
-  background: url(/Mission-4/Assets/Images/Login/Tane.jpg) center/cover no-repeat;
+  background: url(/Mission-4/Assets/Images/MyFixIt/Tane.jpg) center/cover no-repeat;
   background-position-x: 47%;
   border-radius: 0 100px 0 0;
   flex-shrink: 0;
@@ -150,7 +150,7 @@ img {
   position: relative;
   height: fit-content;
   /* HERO SECTION - BG Image */
-  background: url(/Mission-4/Assets/Images/Login/Hikurangi.jpg) center/cover no-repeat;
+  background: url(/Mission-4/Assets/Images/MyFixIt/Hikurangi.jpg) center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: left;
@@ -227,27 +227,34 @@ img {
 
 .section-card.points {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: left;
-  background: var(--color-white);
+  justify-content: space-between;
+  background: var(--color-secondary-light);
   border: 1px solid var(--color-secondary);
-  padding-bottom: 1rem;
   font-size: var(--font-size-h2);
+  padding: 1rem 2rem;
+  gap: 1rem;
+}
+
+.points-left h2 {
+  margin: 0;
+}
+
+.points-middle {
+  display: flex;
+  justify-content: center;
 }
 
 .scoreboard {
   display: flex;
-  flex-direction: row;
-  list-style: none;
-  margin-left: 1.5rem;
+  gap: 2rem;
   padding: 0;
-  font-weight: var(--font-weight-semibold);
+  margin: 0;
+  list-style: none;
 }
 
 .scoreboard li {
   display: flex;
-  flex-direction: row;
   align-items: center;
   font-size: var(--font-size-h3);
 }
@@ -263,22 +270,28 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem;
+  margin-left: 1rem;
   padding: 0.15rem 1rem;
   font-size: var(--font-size-h3);
   font-weight: var(--font-weight-regular);
   color: var(--color-white);
-  background-color: var(--color-secondary-dark);
+  background-color: var(--color-secondary);
   border-radius: 25px;
+}
+
+.points-right {
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* SUBMIT BUTTON */
 
 .btn-submit-report {
-  padding: 0.5rem 1rem;
+  padding: .75rem 1rem;
   background: var(--color-secondary);
   color: var(--color-white);
   border-radius: 25px;
+  font-size: var(--font-size-p);
   font-weight: var(--font-weight-semibold);
   text-decoration: none;
   transition: background-color 0.3s ease;
@@ -287,6 +300,24 @@ img {
 .btn-submit-report:hover {
   background: var(--color-secondary-dark);
 }
+
+/* SEE ALL BUTTON */
+
+.btn-see-all {
+  padding: .75rem 1rem;
+  background: var(--color-secondary);
+  color: var(--color-white);
+  border-radius: 25px;
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-see-all:hover {
+  background: var(--color-secondary-dark);
+}
+
+
 
 /* REPORT CARDS */
 
@@ -307,7 +338,7 @@ img {
   border: solid var(--color-secondary-dark) 1px;
   position: relative;
   transition: box-shadow 0.3s ease;
-  overflow: hidden; /* Keeps the green bar inside rounded corners */
+  overflow: hidden;  
 }
 
 .item::after {
@@ -398,7 +429,7 @@ img {
 }
 
 .badge {
-  background-color: var(--color-secondary-dark);
+  background-color: var(--color-secondary);
   color: white;
   padding: 5px 25px;
   text-align: center;

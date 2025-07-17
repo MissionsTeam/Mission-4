@@ -54,28 +54,35 @@
 
     <!-- myFixIt POINTS SECTION -->
         <section class="section-card points">
-        <h2>Your FixIt Stats:</h2>
-        <ul class="scoreboard">
-          <li>
-            <h2>FixIt Points</h2>
-            <p><span class="scoreboard-badge">315</span></p>
-          </li>
-          <li>
-            <h2>Total Reports</h2>
-            <p><span class="scoreboard-badge">26</span></p>
-          </li>
-        </ul>
+        <div class="points-left">
+          <h2>Your FixIt Stats:</h2>
+        </div>
+        <div class="points-middle">
+          <ul class="scoreboard">
+            <li>
+              <h2>FixIt Points</h2>
+              <p><span class="scoreboard-badge">315</span></p>
+            </li>
+            <li>
+              <h2>Total Reports</h2>
+              <p><span class="scoreboard-badge">26</span></p>
+            </li>
+          </ul>
+        </div>
+        <div class="points-right">
+          <a href="categories.html" class="btn-submit-report">
+            <i class="fa-solid fa-plus"></i> Submit New Report
+          </a>
+        </div>
       </section>
-      
     <!-- PENDING REPORTS -->
       <section class="section-card">
-       <div class="section-header">
-          <h2><span class="badge">4</span> Pending Reports</h2>
-        <div class="submit-report-wrapper">
-          <a href="categories.html" class="btn-submit-report"><i class="fa-solid fa-plus"></i> Submit New Report</a>
+        <div class="section-header">
+            <h2><span class="badge">4</span> Pending Reports</h2>          
+          <div class="see-all-wrapper">
+            <a href="categories.html" class="btn-see-all">See All</a> 
         </div>
       </div>
-
         <div class="section-content flex-container">
           <div class="item">
             <p><strong>Broken Streetlights</strong><br>
@@ -102,7 +109,7 @@
             <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
           </div>
           <div class="item">
-            <p><strong>Overgrown Grass or Weeds</strong><br>
+            <p><strong>Overgrown Grass and Weeds</strong><br>
               Glendene<br>
               Submitted 2 Days ago<br>
               <em>Status: Pending</em>
@@ -114,8 +121,13 @@
 
 
     <!-- RESOLVED REPORTS -->
-    <section class="section-card">
-      <h2><span class="badge">6</span> Resolved Reports</h2>
+      <section class="section-card">
+        <div class="section-header">
+            <h2><span class="badge">6</span> Resolved Reports</h2>          
+          <div class="see-all-wrapper">
+            <a href="categories.html" class="btn-see-all">See All</a> 
+        </div>
+      </div>
       <div class="section-content flex-container">
         <div class="item">
           <p><strong>Illegal Rubbish Dumping</strong><br>
