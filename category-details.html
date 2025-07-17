@@ -10,8 +10,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="script.js"></script>
 </head>
-</head>
+<body>
+   <div class="page-container">
     <!-- HEADER -->
     <header class="header">
       <div class="header-inner">
@@ -20,6 +22,12 @@
           <input type="text" placeholder="Search FixIt" />
           <a href="#" class="nav-btn login">Search</a>
         </div>
+        
+        <!-- HAMBURGER BUTTON for mobile/tablet -->
+        <button class="hamburger" aria-label="Toggle navigation">
+        <i class="fa fa-bars"></i>
+        </button>
+
         <nav class="nav-buttons">
           <a href="#" class="nav-btn">Menu</a>
           <a href="#" class="nav-btn login">myFixIt</a>
@@ -41,35 +49,35 @@
         <section class="hero">
           <div class="hero-overlay"></div>
           <div class="hero-content">
-            <h1>Heading 1</h1>
-            <h2>Heading 2</h2>
-            <p class="hero-quote">
-              Subtitle Line 1<br />
-              <em>Subtitle Line 2</em>
-            </p>
+            <h1>Rubbish and Waste</h1>
+            <h2>Issues involving Rubbish and Waste</h2>
           </div>
         </section>
 
-    <!-- INTRODUCTION SECTION -->
-        <section class="section-card green">
-          <h2><i class="fa-solid fa-handshake-angle"></i></i> Heading </h2>
-            <p>Placeholder Text</p>
+        <!-- REPORT ISSUE DROPDOWN SECTION -->
+<section class="section-card" id="report-issue-section">
+  <h2><i class="fa-solid fa-triangle-exclamation"></i> What is the Issue?</h2>
 
-          <h2><i class="fa-solid fa-heart"></i> List Placeholder</h2>
-          <ul class="list-basic">
-            <li><strong>1</strong> - Item 1</li>
-            <li><strong>2</strong> - Item 2</li>
-            <li><strong>3</strong> - Item 3</li>
-        </ul>
-        </section>
+  <!-- DROPDOWN MENU -->
+  <label for="issue-type" class="dropdown-label">Select an issue:</label>
+  <select id="issue-type" class="dropdown-select">
+    <option value="" disabled selected>-- Choose an option --</option>
+    <option value="bins">Overflowing public bins</option>
+    <option value="dumping">Illegal dumping / Fly tipping</option>
+    <option value="trolleys">Abandoned shopping trolleys</option>
+    <option value="missed">Missed rubbish or recycling collection</option>
+    <option value="litter">Litter in public spaces</option>
+    <option value="broken-bins">Broken recycling bins or lids</option>
+    <option value="multiple">2 or more of the above</option>
+  </select>
 
-    <!-- MISSION -->
-      <section class="section-card">
-        <h2><i class="fa-solid fa-heart"></i> Heading</h2>
-          <p><strong>Lorem</strong> ipsum dolor sit amet, consectetur adipiscing elit. Quisque purus eros, euismod nec maximus in, imperdiet sed lorem. Fusce leo justo, condimentum a ante sed, posuere cursus neque.</p>
-          <p><strong>Lorem ipsum dolor sit amet,</strong> <em>(consectetur adipiscing)</em></p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-      </section>
+  <!-- NAVIGATION BUTTONS -->
+  <div class="dropdown-buttons">
+    <button class="cta-btn" id="back-button">Back</button>
+    <button class="cta-btn" id="next-button" disabled>Next</button>
+  </div>
+</section>
+
 
     </div> <!-- .body-right end -->
 
@@ -125,5 +133,6 @@
   </div>
 </footer>
 </div>  
+</div>
 </body>
 </html>
