@@ -40,7 +40,7 @@ img {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url("/Mission-4/Assets/Images/Walk.jpg") center/cover no-repeat;
+  background: url("/Mission-4/Assets/Images/Login/Join.jpg") center/cover no-repeat;
 }
 
 /* OVERLAY */
@@ -55,9 +55,7 @@ img {
 .login-modal {
   position: relative;
   z-index: 2;
-  background: var(--color-primary);
   padding: 40px 32px;
-  border-radius: 16px;
   width: 30%;
   color: var(--color-white);
   display: flex;
@@ -72,12 +70,10 @@ img {
   font-size: var(--font-size-h1);
   font-weight: var(--font-weight-bold);
   color: var(--color-white);
-  margin-bottom: 0;
 }
 
 .back-link {
   color: var(--color-secondary);
-  text-decoration: none;
   margin-right: 8px;
 }
 
