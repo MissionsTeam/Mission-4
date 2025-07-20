@@ -12,16 +12,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
+
+  <!-- SKIP LINK -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <div class="page-container">
 
     <!-- HEADER -->
     <header class="header">
       <div class="header-inner">
         <img src="Assets/Images/Logo.png" alt="FixIt Logo" class="logo" />
-        <div class="search-bar">
-          <input type="text" placeholder="Search FixIt" />
-          <a href="#" class="nav-btn login">Search</a>
-        </div>
+          <form class="search-bar" action="/search" role="search" aria-label="Search FixIt">
+            <input type="text" name="q" placeholder="Search FixIt" aria-label="Search input" />
+            <button type="submit">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <span class="sr-only">Search</span>
+            </button>
+          </form>
         <nav class="nav-buttons">
           <a href="#" class="nav-btn">Menu</a>
           <a href="#" class="nav-btn login">myFixIt</a>
@@ -37,7 +44,7 @@
       </div>
 
     <!-- RIGHT BODY -->
-      <div class="body-right">
+    <div class="body-right" id="main-content" role="main">
 
     <!-- HERO SECTION -->
         <section class="hero">

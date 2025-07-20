@@ -11,161 +11,166 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-</head>
-    <!-- HEADER -->
-    <header class="header">
-      <div class="header-inner">
-        <img src="Assets/Images/Logo.png" alt="FixIt Logo" class="logo" />
-        <div class="search-bar">
-          <input type="text" placeholder="Search FixIt" />
-          <a href="#" class="nav-btn login">Search</a>
-        </div>
-        <nav class="nav-buttons">
-          <a href="#" class="nav-btn">Menu</a>
-          <a href="#" class="nav-btn login">myFixIt</a>
-        </nav>
-      </div>
-    </header>
 
-    <!-- MAIN BODY -->
-    <div class="main-body">
+<body>
+
+  <!-- SKIP LINK -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <img src="Assets/Images/Logo.png" alt="FixIt Logo" class="logo" />
+      <form class="search-bar" action="/search" role="search" aria-label="Search FixIt">
+        <input type="text" name="q" placeholder="Search FixIt" aria-label="Search input" />
+        <button type="submit">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <span class="sr-only">Search</span>
+        </button>
+      </form>
+      <nav class="nav-buttons" role="navigation" aria-label="Main navigation">
+        <a href="#" class="nav-btn">Menu</a>
+        <a href="#" class="nav-btn login">myFixIt</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN BODY -->
+  <div class="main-body">
 
     <!-- LEFT BODY -->
-      <div class="body-left">
-      </div>
+    <div class="body-left"></div>
 
     <!-- RIGHT BODY -->
-      <div class="body-right">
+    <div class="body-right" id="main-content" role="main">
 
-    <!-- HERO SECTION -->
-        <section class="hero">
-          <div class="hero-overlay"></div>
-          <div class="hero-content">
-            <h1>Make a Report</h1>
-            <h2>How Can We Help?</h2>
-            <p class="hero-quote">
-              "He waka eke noa."<br />
-              <em>We're all in this together.</em>
-            </p>
-          </div>
+      <!-- HERO SECTION -->
+      <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <h1>Make a Report</h1>
+          <h2>How Can We Help?</h2>
+          <p class="hero-quote">
+            "He waka eke noa."<br />
+            <em>We're all in this together.</em>
+          </p>
+        </div>
+      </section>
+
+      <!-- CATEGORY -->
+      <section class="section-card">
+        <h2>
+          <a href="myfixit.html">
+            <i class="fa-solid fa-circle-arrow-left back-icon"></i>
+          </a>
+          What would you like to report today?
+        </h2>
+        <p>Select the category that applies</p>
+
+        <section class="section-content">
+          <a href="category-details.html" class="report-card">
+            <h3><i class="fa-solid fa-trash-can category-icon"></i> Rubbish & Waste</h3>
+            <p>Manage rubbish collection, recycling, or illegal dumping issues.</p>
+            <i class="fa-solid fa-circle-arrow-right report-icon"></i>
+          </a>
+
+          <a href="#" class="report-card">
+            <h3><i class="fa-solid fa-road category-icon"></i> Roads & Transport</h3>
+            <p>Report potholes, damaged signs, or unsafe crossings.</p>
+            <i class="fa-solid fa-circle-arrow-right report-icon"></i>
+          </a>
+
+          <a href="#" class="report-card">
+            <h3><i class="fa-solid fa-lightbulb category-icon"></i> Lighting & Electricity</h3>
+            <p>Fix streetlights, electrical faults, or exposed wiring issues.</p>
+            <i class="fa-solid fa-circle-arrow-right report-icon"></i>
+          </a>
+
+          <a href="#" class="report-card">
+            <h3><i class="fa-solid fa-droplet category-icon"></i> Water, Drainage & Flooding</h3>
+            <p>Log blocked drains, leaks, or stormwater flooding problems.</p>
+            <i class="fa-solid fa-circle-arrow-right report-icon"></i>
+          </a>
+
+          <a href="#" class="report-card">
+            <h3><i class="fa-solid fa-dog category-icon"></i> Animals & Pests</h3>
+            <p>Report stray animals, pest infestations, or wildlife hazards.</p>
+            <i class="fa-solid fa-circle-arrow-right report-icon"></i>
+          </a>
+
+          <a href="#" class="report-card">
+            <h3><i class="fa-solid fa-city category-icon"></i> Buildings & Facilities</h3>
+            <p>Report damaged parks, public toilets, or community buildings.</p>
+            <i class="fa-solid fa-circle-arrow-right report-icon"></i>
+          </a>
+
+          <a href="#" class="report-card">
+            <h3><i class="fa-solid fa-seedling category-icon"></i> Environmental Health</h3>
+            <p>Raise concerns about air, noise, or hazardous material issues.</p>
+            <i class="fa-solid fa-circle-arrow-right report-icon"></i>
+          </a>
+
+          <a href="#" class="report-card">
+            <h3><i class="fa-solid fa-wheelchair category-icon"></i> Accessibility Issues</h3>
+            <p>Report inaccessible paths, entrances, or mobility challenges.</p>
+            <i class="fa-solid fa-circle-arrow-right report-icon"></i>
+          </a>
         </section>
+      </section>
 
-    <!-- CATEGORY -->
-    <section class="section-card">
-    <h2>
-      <a href="myfixit.html">
-        <i class="fa-solid fa-circle-arrow-left back-icon"></i>
-      </a> 
-      What would you like to report today?
-    </h2>
-    <p>Select the category that applies</p>
-    
-    <section class="section-content">
-  
-    <!-- CLICKABLE -->
-      <a href="category-details.html" class="report-card">
-        <h3><i class="fa-solid fa-trash-can category-icon"></i> Rubbish & Waste</h3>
-        <p>Manage rubbish collection, recycling, or illegal dumping issues.</p>
-        <i class="fa-solid fa-circle-arrow-right report-icon"></i>
-      </a>
+    </div> <!-- .body-right -->
+  </div> <!-- .main-body -->
 
-    <!-- NON-CLICKABLE -->
-      <a href="#" class="report-card">
-          <h3><i class="fa-solid fa-road category-icon"></i>Roads & Transport</h3>
-          <p>Report potholes, damaged signs, or unsafe crossings.</p>
-          <i class="fa-solid fa-circle-arrow-right report-icon"></i>
-        </a>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
 
-        <a href="#" class="report-card">
-          <h3><i class="fa-solid fa-lightbulb category-icon"></i>Lighting & Electricity</h3>
-          <p>Fix streetlights, electrical faults, or exposed wiring issues.</p>
-          <i class="fa-solid fa-circle-arrow-right report-icon"></i>
-        </a>
-
-        <a href="#" class="report-card">
-          <h3><i class="fa-solid fa-droplet category-icon"></i>Water, Drainage & Flooding</h3>
-          <p>Log blocked drains, leaks, or stormwater flooding problems.</p>
-          <i class="fa-solid fa-circle-arrow-right report-icon"></i>
-        </a>
-
-        <a href="#" class="report-card">
-          <h3><i class="fa-solid fa-dog category-icon"></i>Animals & Pests</h3>
-          <p>Report stray animals, pest infestations, or wildlife hazards.</p>
-          <i class="fa-solid fa-circle-arrow-right report-icon"></i>
-        </a>
-
-        <a href="#" class="report-card">
-          <h3><i class="fa-solid fa-city category-icon"></i>Buildings & Facilities</h3>
-          <p>Report damaged parks, public toilets, or community buildings.</p>
-          <i class="fa-solid fa-circle-arrow-right report-icon"></i>
-        </a>
-
-        <a href="#" class="report-card">
-          <h3><i class="fa-solid fa-seedling category-icon"></i>Environmental Health</h3>
-          <p>Raise concerns about air, noise, or hazardous material issues.</p>
-          <i class="fa-solid fa-circle-arrow-right report-icon"></i>
-        </a>
-
-        <a href="#" class="report-card">
-          <h3><i class="fa-solid fa-wheelchair category-icon"></i>Accessibility Issues</h3>
-          <p>Report inaccessible paths, entrances, or mobility challenges.</p>
-          <i class="fa-solid fa-circle-arrow-right report-icon"></i>
-        </a>
-    </section>
-
-    </div> <!-- .body-right end -->
-
-    </div> <!-- .main-body end -->
-
-    <!-- FOOTER -->
-      <footer class="footer">
-        <div class="footer-inner">
-            
-    <!-- LEFT SECTION -->
+      <!-- LEFT SECTION -->
       <div class="section-left">
         <div class="footer-title">
           <i class="fa-solid fa-location-dot"></i>
           <span>Visit Us</span>
         </div>
-          <p class="footer-address">
-            Raphoe House Level 1/8<br />
-            Gloucester Park Road,<br />
-            Onehunga, Auckland 1061
-          </p>
+        <p class="footer-address">
+          Raphoe House Level 1/8<br />
+          Gloucester Park Road,<br />
+          Onehunga, Auckland 1061
+        </p>
       </div>
 
-    <!-- CENTER SECTION -->
-    <div class="section-center">
-      <div class="footer-title">
-        <span>Need Help? Get In Touch</span>
+      <!-- CENTER SECTION -->
+      <div class="section-center">
+        <div class="footer-title">
+          <span>Need Help? Get In Touch</span>
+        </div>
+        <div class="contact-buttons">
+          <button class="contact-btn">
+            <i class="fa-solid fa-phone"></i>
+            <span>Phone</span>
+          </button>
+          <button class="contact-btn">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Email</span>
+          </button>
+        </div>
       </div>
-      <div class="contact-buttons">
-        <button class="contact-btn">
-          <i class="fa-solid fa-phone"></i>
-          <span>Phone</span>
-        </button>
-        <button class="contact-btn">
-          <i class="fa-solid fa-envelope"></i>
-          <span>Email</span>
-        </button>
-      </div>
-    </div>
 
-    <!-- RIGHT SECTION-->
-    <div class="section-right">
-      <div class="footer-title">
-        <i class="fa-solid fa-share-nodes"></i>
-        <span>Follow Us</span>
+      <!-- RIGHT SECTION -->
+      <div class="section-right">
+        <div class="footer-title">
+          <i class="fa-solid fa-share-nodes"></i>
+          <span>Follow Us</span>
+        </div>
+        <div class="social-buttons">
+          <a class="social-btn" href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a class="social-btn" href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a class="social-btn" href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a class="social-btn" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
       </div>
-      <div class="social-buttons">
-        <a class="social-btn" href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        <a class="social-btn" href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a class="social-btn" href="#"><i class="fa-brands fa-youtube"></i></a>
-        <a class="social-btn" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-      </div>
+
     </div>
-  </div>
-</footer>
-</div>  
+  </footer>
+
 </body>
 </html>
