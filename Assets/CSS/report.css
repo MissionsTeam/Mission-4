@@ -125,10 +125,11 @@ img {
 /* BODY LEFT - Fixed Side Image */
 .body-left {
   position: sticky;
+  top: 100px;
   width: 20vw;
   height: calc(100vh - 100px);
   /* BODY LEFT - BG Image */
-  background: url(/Mission-4/Assets/Images/Rubbish.jpg) center/cover no-repeat;
+  background: url("/Assets/Images/Rubbish.jpg") center/cover no-repeat;
   border-radius: 0 100px 0 0;
   flex-shrink: 0;
 }
@@ -144,7 +145,7 @@ img {
   position: relative;
   height: fit-content;
   /* HERO SECTION - BG Image */
-  background: url("/Mission-4/Assets/Images/Rubbish.jpg") center/cover no-repeat;
+  background: url("/Assets/Rubbish.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: left;
