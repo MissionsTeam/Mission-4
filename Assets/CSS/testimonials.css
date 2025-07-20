@@ -771,3 +771,10 @@ li::marker {
   font-size: 1rem;
   font-family: inherit;
 }
+.body-right {
+  flex: 1;
+  padding: 24px;
+  margin-top: 2rem;
+  width: 80vw;
+  overflow: hidden;
+}

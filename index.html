@@ -23,14 +23,38 @@
       <header class="header">
         <div class="header-inner">
           <img src="Assets/Images/Logo.png" alt="FixIt Logo" class="logo" />
+
           <div class="search-bar">
             <input type="text" placeholder="Search FixIt" />
             <a href="#" class="nav-btn login">Search</a>
           </div>
+
+          <!-- Desktop Navigation -->
           <nav class="nav-buttons">
             <a href="#" class="nav-btn">Menu</a>
-            <a href="login.html" class="nav-btn login">myFixIt</a>
+            <a href="#" class="nav-btn login">myFixIt</a>
           </nav>
+
+          <!-- Mobile Navigation -->
+          <div class="mobile-nav">
+            <div class="hamburger" onclick="toggleMobileMenu()">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+          <a href="#getting-started" onclick="closeMobileMenu()"
+            >Getting Started</a
+          >
+          <a href="#our-mission" onclick="closeMobileMenu()">Our Mission</a>
+          <a href="#community-voice" onclick="closeMobileMenu()"
+            >Community Voice</a
+          >
+          <a href="login.html" onclick="closeMobileMenu()">myFixIt</a>
         </div>
       </header>
 
@@ -91,7 +115,7 @@
           </section>
 
           <!-- GETTING STARTED -->
-          <section class="section-card">
+          <section class="section-card" id="getting-started">
             <h2><i class="fa-solid fa-heart"></i> Getting Started</h2>
             <p>
               Ready to make a difference in your community? Here's how to get
@@ -105,11 +129,11 @@
               <li>Add your location and description</li>
               <li>Submit your report and help make change happen</li>
             </ol>
-            <a class="cta-btn" href="#">Submit A Report</a>
+            <a class="cta-btn" href="login.html">Submit A Report</a>
           </section>
 
           <!-- MISSION -->
-          <section class="section-card">
+          <section class="section-card" id="our-mission">
             <h2><i class="fa-solid fa-heart"></i> Our Mission</h2>
             <p>
               <strong>Kaitiakitanga</strong> is a Māori principle that embodies
@@ -130,7 +154,7 @@
           </section>
 
           <!-- PRIVACY POLICY -->
-          <section class="section-card">
+          <section class="section-card privacy-section">
             <h2><i class="fa-solid fa-heart"></i> Privacy Policy</h2>
             <p>
               <strong>Your privacy is important to us.</strong> This policy
@@ -141,16 +165,25 @@
               Any information collected—location, images, and contact
               details—will not be shared without your permission.
             </p>
-            <p>You can read the privacy policy here at any time.</p>
-            <a class="cta-btn" href="#">Learn More</a>
+            <p>
+              You can read the privacy policy
+              <a href="privacy.html" class="inline-link">here</a> at any time.
+            </p>
+            <p><strong>Want to know the impact we are making?</strong></p>
+
+            <a class="cta-btn" href="testimonials.html" id="community-voice"
+              >Community Voice</a
+            >
           </section>
         </div>
+
         <!-- .body-right -->
       </div>
+
       <!-- .main-body -->
 
       <!-- FOOTER -->
-      <footer class="footer">
+      <footer class="footer" id="contact">
         <div class="footer-inner">
           <!-- LEFT SECTION -->
           <div class="section-left">
@@ -206,5 +239,45 @@
         </div>
       </footer>
     </div>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const hamburger = document.querySelector(".hamburger");
+
+        mobileMenu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      }
+
+      function closeMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const hamburger = document.querySelector(".hamburger");
+
+        mobileMenu.classList.remove("active");
+        hamburger.classList.remove("active");
+      }
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", function (event) {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const hamburger = document.querySelector(".hamburger");
+        const mobileNav = document.querySelector(".mobile-nav");
+
+        if (
+          !mobileNav.contains(event.target) &&
+          !mobileMenu.contains(event.target)
+        ) {
+          closeMobileMenu();
+        }
+      });
+
+      // Close mobile menu on window resize if open
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 768) {
+          closeMobileMenu();
+        }
+      });
+    </script>
   </body>
 </html>
