@@ -356,10 +356,6 @@ img {
   border-bottom-right-radius: 10px;
 }
 
-.item:hover {
-  box-shadow: var(--shadow-medium);
-}
-
 .item:hover::after {
   transform: scaleX(1);
 }
