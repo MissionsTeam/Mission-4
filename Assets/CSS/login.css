@@ -40,7 +40,7 @@ img {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url("/Mission-4/Assets/Images/Walk.jpg") center/cover no-repeat;
+  background: url("/Mission-4/Assets/Images/Login/Join.jpg") center/cover no-repeat;
 }
 
 /* OVERLAY */
@@ -55,17 +55,13 @@ img {
 .login-modal {
   position: relative;
   z-index: 2;
-  background: var(--color-primary);
   padding: 40px 32px;
-  border-radius: 16px;
   width: 30%;
   color: var(--color-white);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  text-align: center;
-  box-shadow: var(--shadow-medium);
+  text-align: center
 }
 
 .login-title {
@@ -77,13 +73,12 @@ img {
 
 .back-link {
   color: var(--color-secondary);
-  text-decoration: none;
   margin-right: 8px;
 }
 
 .login-subtitle {
   font-size: 14px;
-  margin: 0;
+  margin-bottom: 1.5rem;
 }
 
 .login-form {
@@ -98,11 +93,11 @@ img {
   border-radius: 25px;
   border: 1px solid var(--color-secondary);
   font-size: 16px;
-  background: white;
+  background: var(--color-white);
 }
 
 .input:focus {
-  border: 1px solid var(--color-secondary-dark);
+  border: 2px solid var(--color-secondary-dark);
   outline: none;
 }
 
@@ -133,6 +128,7 @@ img {
   align-items: center;
   width: 100%;
   gap: 10px;
+  margin: 1.5rem 0;
 }
 
 .divider span {
@@ -181,3 +177,80 @@ img {
   margin-left: 4px;
 }
 
+/* RESPONSIVENESS */
+
+@media (max-width: 768px) {
+  .login-modal {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .login-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .login-form {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .input {
+    font-size: 15px;
+  }
+
+  .form-footer {
+    text-align: center;
+  }
+
+  .form-btn {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .divider {
+    gap: 8px;
+  }
+
+  .social-login-buttons {
+    width: 100%;
+  }
+
+  .social-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .register-text {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .sign-up-link {
+    display: inline-block;
+    margin-top: 0.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-title {
+    font-size: 1.5rem;
+  }
+
+  .main-body {
+    background-position: center;
+    background-size: cover;
+    padding: 1rem;
+  }
+
+  .input,
+  .form-btn,
+  .social-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .login-subtitle {
+    font-size: 13px;
+  }
+}
