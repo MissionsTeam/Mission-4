@@ -38,4 +38,21 @@
   --gradient-black: linear-gradient(90deg, #000000 0%, #222222 38%, rgba(34, 34, 34, 0.5) 70%, rgba(34, 34, 34, 0) 100%);
   --gradient-white: linear-gradient(90deg, #eeeeee 0%, #ffffff 38%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0) 100%);
 
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-white);
+  color: var(--color-primary);
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
 }
