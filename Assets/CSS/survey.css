@@ -72,29 +72,25 @@ img {
   border: 1px solid var(--color-secondary);
   border-radius: 20px;
   overflow: hidden;
-  align-items: center;
 }
 
 .search-bar input {
   border: none;
   flex: 1;
-  padding: 10px 14px;
+  padding: 10px;
   font-size: 14px;
   background: transparent;
   outline: none;
   font-family: var(--font-family-base);
-  color: var(--color-text-primary);
 }
 
 .search-bar button {
   background: none;
   border: none;
-  padding: 10px 14px;
+  padding: 10px;
   font-size: 16px;
   cursor: pointer;
-  color: var(--color-primary);
-  display: flex;
-  align-items: center;
+  color: var(--color-text-light);
 }
 
 /* NAV */
@@ -122,8 +118,8 @@ img {
   display: flex;
   width: 100%;
   min-height: calc(100vh - 100px);
-  margin-top: 6.25rem;
-  background-color: var(--color-background);
+  margin-top: 50px;
+  background-color: #e6e6e6;
 }
 
 /* BODY LEFT - Fixed Side Image */
@@ -144,7 +140,7 @@ img {
 /* BODY RIGHT - Scrollable Content */
 .body-right {
   flex: 1;
-  padding: 0 24px;
+  padding: 24px;
 }
 
 /* HERO SECTION */
@@ -152,7 +148,7 @@ img {
   position: relative;
   height: fit-content;
   /* HERO SECTION - BG Image */
-  background: url("/Assets/Images/Paddle.jpg") center/cover no-repeat;
+  background: url("/Images/Paddle.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: left;
@@ -422,6 +418,7 @@ li::marker {
     font-size: 20px;
   }
 }
+
 /* REVIEW SUCCESS MODAL */
 #review-success-modal {
   display: none; /* Hidden by default */
