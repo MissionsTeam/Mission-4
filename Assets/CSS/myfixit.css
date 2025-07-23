@@ -276,10 +276,9 @@ img {
   justify-content: center;
   margin-left: 1rem;
   padding: 0.15rem 1rem;
-  font-size: var(--font-size-h3);
-  font-weight: var(--font-weight-regular);
-  color: var(--color-white);
-  background-color: var(--color-secondary);
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary-dark);
   border-radius: 25px;
 }
 
