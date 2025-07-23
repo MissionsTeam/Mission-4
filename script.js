@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const backButton = document.getElementById("back-button");
   if (backButton) {
     backButton.addEventListener("click", () => {
-      alert("Back button clicked (replace this with actual logic)");
+      cancelReport();
     });
   }
 
@@ -195,9 +195,6 @@ function removeImage() {
 // CANCEL REPORT LOGIC
 function cancelReport() {
   if (confirm("Are you sure you want to cancel this report?")) {
-    document.querySelector("form").reset();
-    updateCounter("description");
-    const submitBtn = document.getElementById("submit-report");
-    if (submitBtn) submitBtn.disabled = true;
+    window.location.href = "categories.html";
   }
 }
