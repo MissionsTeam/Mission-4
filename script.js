@@ -48,6 +48,7 @@ window.initMap = function () {
       } else {
         input.value = `Lat: ${latLng.lat()}, Lng: ${latLng.lng()}`;
       }
+      checkFormValidity(); // Ensure form validation updates after map selection
     });
   });
 };
@@ -82,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!isVisible) {
         setTimeout(() => {
           if (!map) {
-            // Manually call initMap if it hasn't been run yet to display map on load
             initMap();
           } else {
             google.maps.event.trigger(map, "resize");
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const backButton = document.getElementById("back-button");
   if (backButton) {
     backButton.addEventListener("click", () => {
-      alert("Back button clicked (replace this with actual logic)");
+      cancelReport();
     });
   }
 
@@ -135,9 +135,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (form) {
-    description.addEventListener("input", checkFormValidity);
-    dateInput.addEventListener("input", checkFormValidity);
-    locationInput.addEventListener("input", checkFormValidity);
+    // Ensure validation on all inputs
+    ["input", "change"].forEach((event) => {
+      description.addEventListener(event, () => {
+        updateCounter("description");
+        checkFormValidity();
+      });
+      dateInput.addEventListener(event, checkFormValidity);
+      locationInput.addEventListener(event, checkFormValidity);
+    });
+
+    // Run once in case fields are pre-filled
+    checkFormValidity();
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -186,7 +195,6 @@ function removeImage() {
 // CANCEL REPORT LOGIC
 function cancelReport() {
   if (confirm("Are you sure you want to cancel this report?")) {
-    document.querySelector("form").reset();
-    updateCounter("description");
+    window.location.href = "categories.html";
   }
 }
