@@ -264,6 +264,7 @@ li::marker {
   font-weight: var(--font-weight-semibold);
   margin-top: 16px;
   cursor: pointer;
+  border: none;
 }
 .cta-btn:hover {
   background: var(--color-secondary-dark);
