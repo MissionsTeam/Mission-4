@@ -1,5 +1,5 @@
 // MAP LOGIC
-let map; // Global reference so we can access it outside initMap
+let map;
 let marker;
 
 window.initMap = function () {
@@ -52,66 +52,66 @@ window.initMap = function () {
   });
 };
 
+// GLOBAL EVENTS
 document.addEventListener("DOMContentLoaded", () => {
   updateCounter("description");
 
+  console.log("DOM loaded and script.js is running");
+
+  // Hamburger menu toggle
   const hamburger = document.querySelector(".hamburger");
   const navButtons = document.querySelector(".nav-buttons");
-
-  if (hamburger && navButtons) {
-    if (window.innerWidth <= 1024) {
-      navButtons.classList.add("hidden");
-    }
-
+  if (hamburger && navButtons && window.innerWidth <= 1024) {
+    navButtons.classList.add("hidden");
     hamburger.addEventListener("click", () => {
       navButtons.classList.toggle("hidden");
     });
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggleMapBtn = document.getElementById("toggle-map");
-    const mapContainer = document.getElementById("map-container");
+  // Map toggler
+  const toggleMapBtn = document.getElementById("toggle-map");
+  const mapContainer = document.getElementById("map-container");
+  if (toggleMapBtn && mapContainer) {
+    toggleMapBtn.addEventListener("click", () => {
+      const isVisible = mapContainer.style.display === "block";
+      mapContainer.style.display = isVisible ? "none" : "block";
+      toggleMapBtn.textContent = isVisible
+        ? "Choose Location on Map"
+        : "Hide Map";
 
-    if (toggleMapBtn && mapContainer) {
-      toggleMapBtn.addEventListener("click", () => {
-        const isVisible = mapContainer.style.display === "block";
-        mapContainer.style.display = isVisible ? "none" : "block";
-        toggleMapBtn.textContent = isVisible
-          ? "Choose Location on Map"
-          : "Hide Map";
-
-        // Trigger map resize if being shown
-        if (!isVisible && map) {
-          setTimeout(() => {
+      if (!isVisible) {
+        setTimeout(() => {
+          if (!map) {
+            // Manually call initMap if it hasn't been run yet to display map on load
+            initMap();
+          } else {
             google.maps.event.trigger(map, "resize");
-            map.setCenter({ lat: -36.8485, lng: 174.7633 }); // recentre after resize
-          }, 200);
-        }
-      });
-    }
-  });
-
-  const issueSelect = document.getElementById("issue-type");
-  const nextButton = document.getElementById("next-button");
-
-  if (issueSelect && nextButton) {
-    issueSelect.addEventListener("change", function () {
-      nextButton.disabled = this.value === "";
-    });
-
-    issueSelect.addEventListener("click", () => {
-      if (issueSelect.value !== "") {
-        nextButton.disabled = false;
-      }
-    });
-
-    nextButton.addEventListener("click", () => {
-      if (issueSelect.value !== "") {
-        window.location.href = "report.html";
+            map.setCenter({ lat: -36.8485, lng: 174.7633 });
+          }
+        }, 300);
       }
     });
   }
 
+  // Dropdown logic
+  const issueSelect = document.getElementById("issue-type");
+  const nextButton = document.getElementById("next-button");
+  if (issueSelect && nextButton) {
+    issueSelect.addEventListener("change", () => {
+      nextButton.disabled = issueSelect.value === "";
+    });
+
+    nextButton.addEventListener("click", () => {
+      if (issueSelect.value !== "") {
+        const formSection = document.getElementById("report-form");
+        if (formSection) {
+          formSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    });
+  }
+
+  // Back button placeholder
   const backButton = document.getElementById("back-button");
   if (backButton) {
     backButton.addEventListener("click", () => {
@@ -119,38 +119,57 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Form validation and submission
   const form = document.getElementById("report-form");
   const submitBtn = document.getElementById("submit-report");
   const description = document.getElementById("description");
   const dateInput = document.getElementById("report-date");
+  const locationInput = document.getElementById("location");
 
   function checkFormValidity() {
-    const isValid = description.value.trim() && dateInput.value.trim();
+    const isValid =
+      description.value.trim() &&
+      dateInput.value.trim() &&
+      locationInput.value.trim();
     submitBtn.disabled = !isValid;
   }
 
   if (form) {
     description.addEventListener("input", checkFormValidity);
     dateInput.addEventListener("input", checkFormValidity);
+    locationInput.addEventListener("input", checkFormValidity);
 
-    // ✅ Replaced this block to redirect to survey.html if form is valid
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-
-      const locationInput = document.getElementById("location");
-      const descriptionValid = description.value.trim() !== "";
-      const dateValid = dateInput.value.trim() !== "";
-      const locationValid = locationInput && locationInput.value.trim() !== "";
-
-      if (descriptionValid && dateValid && locationValid) {
-        window.location.href = "survey.html"; // redirect to the success page
-      } else {
-        alert("Please fill in all required fields before submitting.");
+      if (!submitBtn.disabled) {
+        window.location.href = "survey.html";
       }
     });
   }
+
+  // Review section logic
+  if (window.location.pathname.includes("survey.html")) {
+    const reviewSubmit = document.getElementById("submit-review");
+    if (reviewSubmit) {
+      reviewSubmit.addEventListener("click", () => {
+        const appeal = document.querySelector('input[name="appeal"]:checked');
+        const satisfaction = document.querySelector(
+          'input[name="satisfaction"]:checked'
+        );
+
+        if (!appeal || !satisfaction) {
+          alert("Please select a rating for both appeal and satisfaction.");
+          return;
+        }
+
+        document.getElementById("review-success-modal").classList.add("show");
+        reviewSubmit.disabled = true;
+      });
+    }
+  }
 });
 
+// CHARACTER COUNTER
 function updateCounter(id) {
   const textarea = document.getElementById(id);
   const counter = document.getElementById(`${id}-counter`);
@@ -159,31 +178,15 @@ function updateCounter(id) {
   }
 }
 
+// IMAGE UPLOAD LOGIC
 function removeImage() {
   document.getElementById("image-upload").value = "";
 }
 
+// CANCEL REPORT LOGIC
 function cancelReport() {
   if (confirm("Are you sure you want to cancel this report?")) {
     document.querySelector("form").reset();
     updateCounter("description");
   }
 }
-
-document.getElementById("submit-review").addEventListener("click", () => {
-  const appeal = document.querySelector('input[name="appeal"]:checked');
-  const satisfaction = document.querySelector(
-    'input[name="satisfaction"]:checked'
-  );
-
-  if (!appeal || !satisfaction) {
-    alert("Please select a rating for both appeal and satisfaction.");
-    return;
-  }
-
-  // Show modal success message
-  document.getElementById("review-success-modal").style.display = "flex";
-
-  // 🔒 Disable the button to prevent re-submission
-  document.getElementById("submit-review").disabled = true;
-});
