@@ -132,7 +132,7 @@ img {
   width: 20vw;
   height: calc(100vh - 100px);
   /* BODY LEFT - BG Image */
-  background-image: url("/Assets/Images/Shore.jpg");
+  background-image: url("/Mission-4/Assets/Images/Shore.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 48% 50%;
@@ -152,7 +152,7 @@ img {
   position: relative;
   height: fit-content;
   /* HERO SECTION - BG Image */
-  background: url("/Assets/Images/Paddle.jpg") center/cover no-repeat;
+  background: url("/Mission-4/Assets/Images/Paddle.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: left;
