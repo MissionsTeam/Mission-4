@@ -18,18 +18,27 @@
     />
   </head>
   <body>
+    <!-- SKIP LINK -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- SKIP LINK -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  
     <div class="page-container">
       <!-- HEADER -->
       <header class="header">
         <div class="header-inner">
           <img src="Assets/Images/Logo.png" alt="FixIt Logo" class="logo" />
 
-          <form class="search-bar" action="/search" role="search" aria-label="Search FixIt">
-            <input type="text" name="q" placeholder="Search FixIt" aria-label="Search input" />
+          <form
+            class="search-bar"
+            action="/search"
+            role="search"
+            aria-label="Search FixIt"
+          >
+            <input
+              type="text"
+              name="q"
+              placeholder="Search FixIt"
+              aria-label="Search input"
+            />
             <button type="submit">
               <i class="fa fa-search" aria-hidden="true"></i>
               <span class="sr-only">Search</span>
@@ -38,8 +47,18 @@
 
           <!-- Desktop Navigation -->
           <nav class="nav-buttons">
-            <a href="#" class="nav-btn">Menu</a>
-            <a href="#" class="nav-btn login">myFixIt</a>
+            <div class="nav-dropdown">
+              <button class="nav-btn dropdown-toggle">
+                Menu <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-menu">
+                <a href="#getting-started">Getting Started</a>
+                <a href="#our-mission">Our Mission</a>
+                <a href="testimonials.html">Community Voice</a>
+                <a href="login.html">myFixIt</a>
+              </div>
+            </div>
+            <a href="login.html" class="nav-btn login">myFixIt</a>
           </nav>
 
           <!-- Mobile Navigation -->
@@ -51,7 +70,6 @@
             </div>
           </div>
         </div>
-
 
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
@@ -248,12 +266,70 @@
       </footer>
     </div>
 
+    <!-- 🌍 Location Permission Modal -->
+    <div id="locationModal" class="modal-overlay">
+      <div class="modal-box">
+        <h3>🌍 Can We Use Your Location?</h3>
+        <p>
+          This helps us show your current area and personalize your FixIt
+          experience.
+        </p>
+        <div class="modal-buttons">
+          <button onclick="allowLocation()">Allow</button>
+          <button onclick="closeModal()">No thanks</button>
+        </div>
+      </div>
+    </div>
+
+    <<!-- 📍 MAP MODAL POPUP -->
+    <div id="mapModal" class="modal-overlay" style="display: none">
+      <div
+        class="modal-box"
+        style="
+          max-width: 95%;
+          width: 600px;
+          padding: 0;
+          overflow: hidden;
+          background: none;
+          border: none;
+          box-shadow: none;
+        "
+      >
+        <div style="position: relative; border-radius: 15px; overflow: hidden">
+          <button
+            onclick="closeMap()"
+            style="
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              z-index: 1000;
+              background: #ff69b4;
+              color: #000;
+              border: none;
+              border-radius: 50%;
+              width: 30px;
+              height: 30px;
+              font-weight: bold;
+              cursor: pointer;
+            "
+          >
+            ×
+          </button>
+          <div id="userMap" style="height: 350px; border-radius: 15px"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- JavaScript for Mobile Menu -->
+    <!-- Leaflet CSS & JS (correctly placed) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
     <script>
+      // Mobile Menu Scripts
       function toggleMobileMenu() {
         const mobileMenu = document.getElementById("mobileMenu");
         const hamburger = document.querySelector(".hamburger");
-
         mobileMenu.classList.toggle("active");
         hamburger.classList.toggle("active");
       }
@@ -261,12 +337,10 @@
       function closeMobileMenu() {
         const mobileMenu = document.getElementById("mobileMenu");
         const hamburger = document.querySelector(".hamburger");
-
         mobileMenu.classList.remove("active");
         hamburger.classList.remove("active");
       }
 
-      // Close mobile menu when clicking outside
       document.addEventListener("click", function (event) {
         const mobileMenu = document.getElementById("mobileMenu");
         const hamburger = document.querySelector(".hamburger");
@@ -280,12 +354,112 @@
         }
       });
 
-      // Close mobile menu on window resize if open
       window.addEventListener("resize", function () {
         if (window.innerWidth > 768) {
           closeMobileMenu();
         }
       });
+
+      // Show modal on page load
+      window.onload = function () {
+        document.getElementById("locationModal").style.display = "flex";
+      };
+
+      // Location Permission
+      function allowLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              const lat = position.coords.latitude;
+              const lon = position.coords.longitude;
+
+              closeModal();
+
+              // Show map
+              const mapDiv = document.getElementById("userMap");
+              mapDiv.style.display = "block";
+
+              const map = L.map("userMap").setView([lat, lon], 13);
+              L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+                  attribution: "&copy; OpenStreetMap contributors",
+                }
+              ).addTo(map);
+
+              L.circleMarker([lat, lon], {
+                radius: 8,
+                fillColor: "#00ff9c",
+                color: "#00ff9c",
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 0.9,
+              })
+                .addTo(map)
+                .bindPopup("📍 You are here")
+                .openPopup();
+            },
+            (error) => {
+              alert("Unable to get your location.");
+              closeModal();
+            }
+          );
+        } else {
+          alert("Geolocation is not supported by your browser.");
+          closeModal();
+        }
+      }
+
+      function closeModal() {
+        document.getElementById("locationModal").style.display = "none";
+      }
+      function allowLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              const lat = position.coords.latitude;
+              const lon = position.coords.longitude;
+
+              closeModal();
+
+              // Show map modal
+              document.getElementById("mapModal").style.display = "flex";
+
+              // Leaflet map setup
+              const map = L.map("userMap").setView([lat, lon], 13);
+              L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+                  attribution: "&copy; OpenStreetMap contributors",
+                }
+              ).addTo(map);
+
+              const marker = L.circleMarker([lat, lon], {
+                radius: 8,
+                fillColor: "#00ff9c",
+                color: "#00ff9c",
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 0.9,
+              })
+                .addTo(map)
+                .bindPopup("📍 You are here")
+                .openPopup();
+            },
+            (error) => {
+              alert("Unable to get your location.");
+              closeModal();
+            }
+          );
+        } else {
+          alert("Geolocation is not supported.");
+          closeModal();
+        }
+      }
+
+      function closeMap() {
+        document.getElementById("mapModal").style.display = "none";
+      }
     </script>
   </body>
 </html>

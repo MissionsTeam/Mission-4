@@ -18,9 +18,8 @@
     />
   </head>
   <body>
-
-  <!-- SKIP LINK -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- SKIP LINK -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- HEADER -->
     <header class="header">
@@ -28,17 +27,69 @@
         <a href="index.html">
           <img src="Assets/Images/Logo.png" alt="FixIt Logo" class="logo" />
         </a>
-          <form class="search-bar" action="/search" role="search" aria-label="Search FixIt">
-            <input type="text" name="q" placeholder="Search FixIt" aria-label="Search input" />
-            <button type="submit">
-              <i class="fa fa-search" aria-hidden="true"></i>
-              <span class="sr-only">Search</span>
-            </button>
-          </form>
+        <form
+          class="search-bar"
+          action="/search"
+          role="search"
+          aria-label="Search FixIt"
+        >
+          <input
+            type="text"
+            name="q"
+            placeholder="Search FixIt"
+            aria-label="Search input"
+          />
+          <button type="submit">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <span class="sr-only">Search</span>
+          </button>
+        </form>
+
+        <!-- Desktop Navigation -->
         <nav class="nav-buttons">
-          <a href="#" class="nav-btn">Menu</a>
-          <a href="#" class="nav-btn login">myFixIt</a>
+          <div class="nav-dropdown">
+            <button
+              class="nav-btn dropdown-toggle"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Menu <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-menu" role="menu">
+              <a href="#getting-started" role="menuitem">Getting Started</a>
+              <a href="#our-mission" role="menuitem">Our Mission</a>
+              <a href="testimonials.html" role="menuitem">Community Voice</a>
+              <a href="login.html" role="menuitem">myFixIt</a>
+            </div>
+          </div>
+          <a href="login.html" class="nav-btn login">myFixIt</a>
         </nav>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav">
+          <div
+            class="hamburger"
+            aria-label="Toggle mobile menu"
+            role="button"
+            tabindex="0"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#getting-started" onclick="closeMobileMenu()"
+          >Getting Started</a
+        >
+        <a href="#our-mission" onclick="closeMobileMenu()">Our Mission</a>
+        <a href="testimonials.html" onclick="closeMobileMenu()"
+          >Community Voice</a
+        >
+        <a href="login.html" onclick="closeMobileMenu()">myFixIt</a>
       </div>
     </header>
 
@@ -62,24 +113,24 @@
           </div>
         </section>
 
-        <!-- MOVED UP: STATS SUMMARY -->
+        <!-- STATS SUMMARY -->
         <section class="section-card stats-summary">
           <h2><i class="fa-solid fa-chart-simple"></i> Our Impact</h2>
           <div class="stats-grid">
             <div class="stat-item">
-              <h3>1,200+</h3>
+              <h3 class="counter" data-target="1200">0</h3>
               <p>Issues Reported</p>
             </div>
             <div class="stat-item">
-              <h3>950+</h3>
+              <h3 class="counter" data-target="950">0</h3>
               <p>Issues Fixed</p>
             </div>
             <div class="stat-item">
-              <h3>3,500+</h3>
+              <h3 class="counter" data-target="3500">0</h3>
               <p>Active Users</p>
             </div>
             <div class="stat-item">
-              <h3>24 hrs</h3>
+              <h3 class="counter-time" data-target="24">0</h3>
               <p>Average Response Time</p>
             </div>
           </div>
@@ -94,13 +145,19 @@
               <i class="fa-solid fa-chevron-left"></i>
             </button>
 
-            <div class="testimonial-carousel">
+            <div
+              class="testimonial-carousel"
+              tabindex="0"
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              <!-- Testimonial cards -->
               <div class="testimonial-card">
                 <div class="testimonial-text">
                   <p><strong>Jane Marshall</strong></p>
                   <p>
-                    “FixIt made it so easy to report issues in my neighborhood.
-                    Love how smooth and modern everything looks!”
+                    "FixIt made it so easy to report issues in my neighborhood.
+                    Love how smooth and modern everything looks!"
                   </p>
                 </div>
               </div>
@@ -109,8 +166,8 @@
                 <div class="testimonial-text">
                   <p><strong>Junaid Khan</strong></p>
                   <p>
-                    “Honestly one of the most helpful community tools I’ve seen.
-                    Fast, user-friendly, and effective.”
+                    "Honestly one of the most helpful community tools I've seen.
+                    Fast, user-friendly, and effective."
                   </p>
                 </div>
               </div>
@@ -119,8 +176,8 @@
                 <div class="testimonial-text">
                   <p><strong>Jinal Patel</strong></p>
                   <p>
-                    “The design is super slick! I had fun using FixIt and
-                    already recommended it to my friends.”
+                    "The design is super slick! I had fun using FixIt and
+                    already recommended it to my friends."
                   </p>
                 </div>
               </div>
@@ -129,29 +186,9 @@
                 <div class="testimonial-text">
                   <p><strong>Matt Damon</strong></p>
                   <p>
-                    “The response time is absolutely phenomenal. Within 5 days,
+                    "The response time is absolutely phenomenal. Within 5 days,
                     my community dustbin was cleared and the street light was
-                    fixed. I have never used a”
-                  </p>
-                </div>
-              </div>
-
-              <div class="testimonial-card">
-                <div class="testimonial-text">
-                  <p><strong>Jinal Patel</strong></p>
-                  <p>
-                    “The design is super slick! I had fun using FixIt and
-                    already recommended it to my friends.”
-                  </p>
-                </div>
-              </div>
-
-              <div class="testimonial-card">
-                <div class="testimonial-text">
-                  <p><strong>Jinal Patel</strong></p>
-                  <p>
-                    “The design is super slick! I had fun using FixIt and
-                    already recommended it to my friends.”
+                    fixed."
                   </p>
                 </div>
               </div>
@@ -160,9 +197,9 @@
                 <div class="testimonial-text">
                   <p><strong>Leo Markmen</strong></p>
                   <p>
-                    “The design awesome. I love the designer and the UX team is
-                    soooo cool. I think Cumorah, David and Amina are good at
-                    their job”
+                    "The design is awesome. I love the designer and the UX team
+                    is soooo cool. I think Cumorah, David and Amina are good at
+                    their job."
                   </p>
                 </div>
               </div>
@@ -171,8 +208,8 @@
                 <div class="testimonial-text">
                   <p><strong>Brad Pitt</strong></p>
                   <p>
-                    “The design is so easy to use! I am super impresed with
-                    their work. The call to action is awesome”
+                    "The design is so easy to use! I am super impressed with
+                    their work. The call to action is awesome."
                   </p>
                 </div>
               </div>
@@ -227,6 +264,19 @@
               <button type="submit" class="cta-btn">Submit Feedback</button>
               <p class="form-message" aria-live="polite"></p>
             </form>
+
+            <!-- Thank You Message (Hidden by default) -->
+            <div class="thank-you-message" id="thankYouMessage">
+              <h3>🎉 Thank You, <span id="userName"></span>!</h3>
+              <p>Your feedback has been successfully submitted.</p>
+              <p>
+                We truly appreciate you taking the time to share your thoughts
+                with us!
+              </p>
+              <button class="cta-btn" onclick="showFeedbackForm()">
+                Leave Another Review
+              </button>
+            </div>
 
             <div class="feedback-extra">
               <h4>Did You Know?</h4>
@@ -303,46 +353,361 @@
         </div>
       </div>
     </footer>
+    <!-- Chatbox -->
+    <div class="chatbox-container">
+      <div class="chatbox-header">
+        <h4>Chat Support</h4>
+        <button class="chatbox-close" aria-label="Close chat">&times;</button>
+      </div>
 
-    <!-- Scroll arrows JS -->
+      <div
+        class="chatbox-messages"
+        aria-live="polite"
+        aria-atomic="false"
+      ></div>
+
+      <form class="chatbox-form" autocomplete="off">
+        <input
+          type="text"
+          placeholder="Ask me something..."
+          aria-label="Type your question"
+          required
+          autocomplete="off"
+        />
+        <button type="submit" aria-label="Send message">Send</button>
+      </form>
+    </div>
+
+    <!-- Chatbox toggle button -->
+    <button class="chatbox-toggle" aria-label="Open chat">💬</button>
+
+    <!-- Enhanced JavaScript -->
     <script>
+      // Animated Counter Function
+      function animateCounter(element, target, duration = 2000) {
+        const start = 0;
+        const increment = target / (duration / 16);
+        let current = start;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+
+          // Format numbers with commas for thousands
+          if (element.classList.contains("counter-time")) {
+            element.textContent = Math.floor(current) + " hrs";
+          } else {
+            element.textContent = Math.floor(current).toLocaleString() + "+";
+          }
+        }, 16);
+      }
+
+      // Intersection Observer for counter animation
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const counters = entry.target.querySelectorAll(
+              ".counter, .counter-time"
+            );
+            counters.forEach((counter) => {
+              const target = parseInt(counter.getAttribute("data-target"));
+              animateCounter(counter, target);
+            });
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Start observing the stats section
+      const statsSection = document.querySelector(".stats-summary");
+      if (statsSection) {
+        counterObserver.observe(statsSection);
+      }
+
+      // Enhanced Testimonial Carousel scroll
       const carousel = document.querySelector(".testimonial-carousel");
       const leftBtn = document.querySelector(".left-arrow");
       const rightBtn = document.querySelector(".right-arrow");
       const scrollAmount = 400;
 
-      leftBtn.addEventListener("click", () => {
-        carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-      });
+      if (leftBtn && carousel) {
+        leftBtn.addEventListener("click", () => {
+          carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        });
+      }
 
-      rightBtn.addEventListener("click", () => {
-        carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      });
-    </script>
+      if (rightBtn && carousel) {
+        rightBtn.addEventListener("click", () => {
+          carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        });
+      }
 
-    <!-- Feedback form JS -->
-    <script>
+      // Enhanced Feedback form handling with personalized thank you
       const form = document.getElementById("feedbackForm");
-      const messageEl = form.querySelector(".form-message");
+      const thankYouMessage = document.getElementById("thankYouMessage");
+      const userNameSpan = document.getElementById("userName");
 
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
+      if (form && thankYouMessage && userNameSpan) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
 
-        // Simple validation handled by 'required' attributes
+          // Get the user's name
+          const userName = document.getElementById("name").value;
 
-        // Simulate success message
-        messageEl.textContent =
-          "Thanks for your feedback! We appreciate your input.";
-        messageEl.style.color = "var(--color-secondary-dark)";
+          // Show personalized thank you message
+          userNameSpan.textContent = userName;
 
-        // Clear form
+          // Hide form and show thank you message with animation
+          form.style.display = "none";
+          thankYouMessage.style.display = "block";
+          thankYouMessage.classList.add("show");
+
+          // Add some confetti effect (optional visual enhancement)
+          createConfetti();
+        });
+      }
+
+      // Function to show feedback form again
+      function showFeedbackForm() {
+        if (!form || !thankYouMessage) return;
+        form.style.display = "block";
+        thankYouMessage.style.display = "none";
+        thankYouMessage.classList.remove("show");
         form.reset();
+      }
 
-        // Hide message after 5 seconds
-        setTimeout(() => {
-          messageEl.textContent = "";
-        }, 5000);
+      // Simple confetti effect
+      function createConfetti() {
+        const colors = ["#10b981", "#2563eb", "#f59e0b", "#ef4444", "#8b5cf6"];
+
+        for (let i = 0; i < 50; i++) {
+          setTimeout(() => {
+            const confetti = document.createElement("div");
+            confetti.style.cssText = `
+          position: fixed;
+          width: 10px;
+          height: 10px;
+          background: ${colors[Math.floor(Math.random() * colors.length)]};
+          top: -10px;
+          left: ${Math.random() * 100}vw;
+          z-index: 1000;
+          border-radius: 50%;
+          pointer-events: none;
+          animation: confettiFall 3s linear forwards;
+        `;
+
+            document.body.appendChild(confetti);
+
+            setTimeout(() => {
+              confetti.remove();
+            }, 3000);
+          }, i * 50);
+        }
+      }
+
+      // Add confetti animation CSS
+      const style = document.createElement("style");
+      style.textContent = `
+    @keyframes confettiFall {
+      to {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+  `;
+      document.head.appendChild(style);
+
+      // Hamburger menu toggle
+      const hamburger = document.querySelector(".hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener("click", () => {
+          mobileMenu.classList.toggle("show");
+        });
+      }
+
+      function toggleMobileMenu() {
+        if (!mobileMenu) return;
+        mobileMenu.classList.toggle("show");
+      }
+
+      function closeMobileMenu() {
+        if (!mobileMenu) return;
+        mobileMenu.classList.remove("show");
+      }
+
+      // Add smooth scroll behavior and hover effects to stats on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        const statItems = document.querySelectorAll(".stat-item");
+        statItems.forEach((item) => {
+          item.addEventListener("mouseenter", () => {
+            item.style.transform = "translateY(-5px) scale(1.02)";
+            item.style.transition = "all 0.3s ease";
+          });
+
+          item.addEventListener("mouseleave", () => {
+            item.style.transform = "translateY(0) scale(1)";
+          });
+        });
       });
+
+      // Chatbox elements
+      const chatToggle = document.querySelector(".chatbox-toggle");
+      const chatContainer = document.querySelector(".chatbox-container");
+      const chatClose = document.querySelector(".chatbox-close");
+      const chatForm = document.querySelector(".chatbox-form");
+      const chatMessages = document.querySelector(".chatbox-messages");
+
+      // Preset Q&A — combined into one array properly
+      const chatQA = [
+        {
+          questions: ["hello", "hi", "hey"],
+          answer:
+            "Hi there! How can I help you report or track an issue in your neighborhood today?",
+        },
+        {
+          questions: ["hours", "open", "close"],
+          answer: "Our working hours are Monday to Friday, 9am to 6pm.",
+        },
+        {
+          questions: ["services", "offer", "what do you do"],
+          answer:
+            "We offer web design, coding tutorials, and business analyst resources.",
+        },
+        {
+          questions: [
+            "contact",
+            "phone",
+            "email",
+            "help",
+            "support",
+            "need assistance",
+          ],
+          answer:
+            "You can contact us at support@example.com or call 123-456-7890.",
+        },
+        {
+          questions: ["thank you", "thanks", "great", "good job"],
+          answer:
+            "You're welcome! Feel free to ask if you have more questions.",
+        },
+        {
+          questions: [
+            "how to report",
+            "report issue",
+            "file complaint",
+            "report problem",
+          ],
+          answer:
+            "To report an issue, just click the 'Report Issue' button, fill out the form with details and submit.",
+        },
+        {
+          questions: [
+            "what kind of issues",
+            "issue types",
+            "reportable problems",
+            "problem types",
+          ],
+          answer:
+            "You can report issues like potholes, broken streetlights, graffiti, noise complaints, or rubbish problems.",
+        },
+        {
+          questions: [
+            "can i track",
+            "track issue",
+            "follow up",
+            "status update",
+          ],
+          answer:
+            "Yes! You can track the status of your reports by logging into your account and visiting 'My Reports'.",
+        },
+        {
+          questions: [
+            "who sees my report",
+            "who gets notified",
+            "report visibility",
+            "is it private",
+          ],
+          answer:
+            "Your report goes directly to the local council and relevant community teams. Your personal info stays confidential.",
+        },
+        {
+          questions: [
+            "how long to fix",
+            "fix time",
+            "response time",
+            "how fast",
+          ],
+          answer:
+            "Response times vary, but most issues are addressed within 3-7 business days.",
+        },
+      ];
+
+      // Helper: find answer based on user input
+      function getBotAnswer(message) {
+        const msg = message.toLowerCase();
+
+        for (const qa of chatQA) {
+          if (qa.questions.some((q) => msg.includes(q))) {
+            return qa.answer;
+          }
+        }
+        return "Sorry, I didn't understand that. Can you try asking something else?";
+      }
+
+      // Show message function
+      function addMessage(text, sender) {
+        const msgDiv = document.createElement("div");
+        msgDiv.classList.add("message", sender);
+        msgDiv.textContent = text;
+        if (chatMessages) {
+          chatMessages.appendChild(msgDiv);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+      }
+
+      if (chatToggle && chatContainer) {
+        // Toggle chat open/close
+        chatToggle.addEventListener("click", () => {
+          chatContainer.classList.add("active");
+          chatToggle.style.display = "none";
+        });
+      }
+
+      if (chatClose && chatToggle && chatContainer) {
+        chatClose.addEventListener("click", () => {
+          chatContainer.classList.remove("active");
+          chatToggle.style.display = "flex";
+        });
+      }
+
+      if (chatForm) {
+        // Handle user message submit
+        chatForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const input = chatForm.querySelector("input");
+          const userText = input.value.trim();
+          if (!userText) return;
+
+          addMessage(userText, "user");
+          input.value = "";
+
+          // Simulate bot thinking delay
+          setTimeout(() => {
+            const answer = getBotAnswer(userText);
+            addMessage(answer, "bot");
+          }, 600);
+        });
+      }
     </script>
   </body>
 </html>
