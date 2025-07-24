@@ -751,9 +751,9 @@ li::marker {
 }
 
 .modal-box {
-  background: whitesmoke;
-  color: green;
-  border: 2px solid#4b89a5;
+  background: var(--color-white);
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-secondary);
   padding: 30px 25px;
   border-radius: 20px;
   text-align: center;
@@ -762,8 +762,8 @@ li::marker {
 }
 
 .modal-buttons button {
-  background: #00ff9c;
-  color: #000;
+  background: var(--color-secondary);
+  color: var(--color-white);
   padding: 10px 24px;
   border: none;
   border-radius: 30px;
@@ -773,7 +773,7 @@ li::marker {
   transition: 0.3s ease;
 }
 .modal-buttons button:hover {
-  background: #00cc7a;
+  background: var(--color-secondary-dark);
 }
 /* DESKTOP DROPDOWN MENU */
 .nav-dropdown {
