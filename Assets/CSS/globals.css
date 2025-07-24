@@ -1,84 +1,36 @@
 :root {
-  /* STYLESHEET */
-
-  /* FONTS */
   --font-family-base: "Inter", sans-serif;
+  --font-size-base: 1rem;
+  --font-size-title: 3.5rem;
+  --font-size-h1: 2.8rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+  --font-size-p: 1rem;
 
-  /* FONT SIZES */ /* USE FOR */
-  --font-size-title: 3.5rem; /* Big Hero */
-  --font-size-h1: 2.8rem; /* Main Page Title */
-  --font-size-h2: 2rem; /* Section Heading */
-  --font-size-h3: 1.5rem; /* Subsection Title */
-  --font-size-p: 1rem; /* Paragraph/Body Text */
-
-  /* FONT WEIGHTS */
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extra-bold: 800;
   --font-weight-black: 900;
 
-  /* COLOUR STYLES */
-  --color-primary: #2c5aa0; /* Dark Blue */
-  --color-secondary: #7bc142; /* Green */
-  --color-secondary-dark: #5a9c2a; /* Dark Green */
-  --color-secondary-light: #d1f0d1; /* Light Green */
+  --color-primary: #2c5aa0;
+  --color-secondary: #6bc71b;  
+  --color-secondary-dark: #5a9c2a;
+  --color-secondary-light: #d1f0d1;
   --color-text-primary: #222222;
-  --color-text-light: #666666;
+  --color-text-light: #595959;  
   --color-background: #e0e0e0;
   --color-white: #ffffff;
 
-  /* SHADOWS */
   --shadow-light: 0 2px 6px rgba(0, 0, 0, 0.1);
   --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
   --shadow-strong: 0 8px 20px rgba(0, 0, 0, 0.2);
 
-  /* GRADIENTS */
-  --gradient-blue: linear-gradient(
-    90deg,
-    #1b3a70 0%,
-    #2c5aa0 38%,
-    rgba(43, 88, 156, 0.5) 70%,
-    rgba(43, 88, 156, 0) 100%
-  );
-  --gradient-green: linear-gradient(
-    90deg,
-    #5a9c2a 0%,
-    #7bc142 38%,
-    rgba(123, 193, 66, 0.5) 70%,
-    rgba(123, 193, 66, 0) 100%
-  );
-  --gradient-black: linear-gradient(
-    90deg,
-    #000000 0%,
-    #222222 38%,
-    rgba(34, 34, 34, 0.5) 70%,
-    rgba(34, 34, 34, 0) 100%
-  );
-  --gradient-white: linear-gradient(
-    90deg,
-    #eeeeee 0%,
-    #ffffff 38%,
-    rgba(255, 255, 255, 0.5) 70%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  --gradient-blue: linear-gradient(90deg, #1b3a70 0%, #2c5aa0 38%, rgba(43, 88, 156, 0.5) 70%, rgba(43, 88, 156, 0) 100%);
+  --gradient-green: linear-gradient(90deg, #5a9c2a 0%, #689f38 38%, rgba(123, 193, 66, 0.5) 70%, rgba(123, 193, 66, 0) 100%);
+  --gradient-black: linear-gradient(90deg, #000000 0%, #222222 38%, rgba(34, 34, 34, 0.5) 70%, rgba(34, 34, 34, 0) 100%);
+  --gradient-white: linear-gradient(90deg, #eeeeee 0%, #ffffff 38%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0) 100%);
 
-
-  
+  --focus-outline: 2px solid var(--color-primary);
+  --focus-outline-offset: 2px;
 }
-  .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--color-white);
-    color: var(--color-primary);
-    padding: 0.5rem 1rem;
-    z-index: 1000;
-    text-decoration: none;
-    font-weight: var(--font-weight-bold);
-    transition: top 0.3s ease;
-  }
-
-  .skip-link:focus {
-    top: 0.5rem;
-  }

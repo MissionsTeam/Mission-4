@@ -28,12 +28,45 @@
           <span class="sr-only">Search</span>
         </button>
       </form>
-      <nav class="nav-buttons" role="navigation" aria-label="Main navigation">
-        <a href="#" class="nav-btn">Menu</a>
-        <a href="#" class="nav-btn login">myFixIt</a>
-      </nav>
-    </div>
-  </header>
+
+      <!-- Desktop Navigation -->
+          <nav class="nav-buttons">
+            <div class="nav-dropdown">
+              <button class="nav-btn dropdown-toggle">
+                Menu <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-menu">
+                <a href="#getting-started">Getting Started</a>
+                <a href="#our-mission">Our Mission</a>
+                <a href="testimonials.html">Community Voice</a>
+                <a href="login.html">myFixIt</a>
+              </div>
+            </div>
+            <a href="login.html" class="nav-btn login">myFixIt</a>
+          </nav>
+
+          <!-- Mobile Navigation -->
+          <div class="mobile-nav">
+            <div class="hamburger" onclick="toggleMobileMenu()">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+          <a href="#getting-started" onclick="closeMobileMenu()"
+            >Getting Started</a
+          >
+          <a href="#our-mission" onclick="closeMobileMenu()">Our Mission</a>
+          <a href="testimonials.html" onclick="closeMobileMenu()"
+            >Community Voice</a
+          >
+          <a href="login.html" onclick="closeMobileMenu()">myFixIt</a>
+        </div>
+      </header>
 
   <!-- MAIN BODY -->
   <div class="main-body">
@@ -171,6 +204,45 @@
 
     </div>
   </footer>
+    <!-- JavaScript for Mobile Menu -->
+    <!-- Leaflet CSS & JS (correctly placed) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
+    <script>
+      // Mobile Menu Scripts
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const hamburger = document.querySelector(".hamburger");
+        mobileMenu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      }
+
+      function closeMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const hamburger = document.querySelector(".hamburger");
+        mobileMenu.classList.remove("active");
+        hamburger.classList.remove("active");
+      }
+
+      document.addEventListener("click", function (event) {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const hamburger = document.querySelector(".hamburger");
+        const mobileNav = document.querySelector(".mobile-nav");
+
+        if (
+          !mobileNav.contains(event.target) &&
+          !mobileMenu.contains(event.target)
+        ) {
+          closeMobileMenu();
+        }
+      });
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 768) {
+          closeMobileMenu();
+        }
+      });
+    </script>
 </body>
 </html>
