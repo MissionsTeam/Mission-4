@@ -1,176 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FixIt - Let's Fix It!</title>
-  <link rel="stylesheet" href="Assets/CSS/survey.css" />
-  <link rel="stylesheet" href="Assets/CSS/globals.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <script src="script.js" defer></script>
-</head>
-    <body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FixIt - Let's Fix It!</title>
+    <link rel="stylesheet" href="Assets/CSS/globals.css" />
+    <link rel="stylesheet" href="Assets/CSS/survey.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="script.js" defer></script>
+  </head>
 
-    <!-- SKIP LINK -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+  <body>
+    <div class="page-container">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="header-inner">
+          <a href="index.html">
+            <img src="Assets/Images/Logo.png" alt="FixIt Logo" class="logo" />
+          </a>
+          <div class="search-bar">
+            <input type="text" placeholder="Search FixIt" />
+            <a href="#" class="nav-btn login">Search</a>
+          </div>
+          <nav class="nav-buttons">
+            <a href="#" class="nav-btn">Menu</a>
+            <a href="#" class="nav-btn login">myFixIt</a>
+          </nav>
+        </div>
+      </header>
 
-      <div class="page-container">
-    <!-- HEADER -->
-    <header class="header">
-      <div class="header-inner">
-        <img src="Assets/Images/Logo.png" alt="FixIt Logo" class="logo" />
-          <form class="search-bar" action="/search" role="search" aria-label="Search FixIt">
-            <input type="text" name="q" placeholder="Search FixIt" aria-label="Search input" />
-            <button type="submit">
-              <i class="fa fa-search" aria-hidden="true"></i>
-              <span class="sr-only">Search</span>
-            </button>
-          </form>
-        <nav class="nav-buttons">
-          <a href="#" class="nav-btn">Menu</a>
-          <a href="#" class="nav-btn login">myFixIt</a>
-        </nav>
-      </div>
-    </header>
+      <!-- MAIN BODY -->
+      <div class="main-body">
+        <!-- LEFT BODY -->
+        <div class="body-left"></div>
 
-    <!-- MAIN BODY -->
-    <div class="main-body">
-
-    <!-- LEFT BODY -->
-      <div class="body-left">
-      </div>
-
-    <!-- RIGHT BODY -->
-    <div class="body-right" id="main-content" role="main">
-
-    <!-- HERO SECTION -->
-        <section class="hero">
-          <div class="hero-overlay"></div>
-          <div class="hero-content">
-            <h1>Successful Submission</h1>
+        <!-- RIGHT BODY -->
+        <div class="body-right">
+          <!-- HERO SECTION -->
+          <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <h1>Successful Submission</h1>
             </div>
-        </section>
+          </section>
 
-      <!-- SUCCESS MESSAGE -->
-<section class="section-card">
-  <h2><i class="fa-solid fa-circle-check"></i> Thank You!</h2>
-  <p>Your report has been successfully submitted. We appreciate your input to help improve our community.</p>
+          <!-- SUCCESS MESSAGE -->
+          <section class="section-card">
+            <h2><i class="fa-solid fa-circle-check"></i> Thank You!</h2>
+            <p>
+              Your report has been successfully submitted. We appreciate your
+              input to help improve our community.
+            </p>
 
-  <!-- USER APPEAL RATING THING -->
-  <div class="form-group">
-    <label><strong>How appealing did you find the reporting process?</strong></label>
-    <div style="display: flex; gap: 10px; margin-top: 8px;">
-      <label><input type="radio" name="appeal" value="1" required /> 1</label>
-      <label><input type="radio" name="appeal" value="2" /> 2</label>
-      <label><input type="radio" name="appeal" value="3" /> 3</label>
-      <label><input type="radio" name="appeal" value="4" /> 4</label>
-      <label><input type="radio" name="appeal" value="5" /> 5</label>
-    </div>
-  </div>
+            <!-- USER APPEAL RATING -->
+            <div class="form-group">
+              <label
+                ><strong
+                  >How appealing did you find the reporting process?</strong
+                ></label
+              >
+              <div style="display: flex; gap: 10px; margin-top: 8px">
+                <label
+                  ><input type="radio" name="appeal" value="1" required />
+                  1</label
+                >
+                <label><input type="radio" name="appeal" value="2" /> 2</label>
+                <label><input type="radio" name="appeal" value="3" /> 3</label>
+                <label><input type="radio" name="appeal" value="4" /> 4</label>
+                <label><input type="radio" name="appeal" value="5" /> 5</label>
+              </div>
+            </div>
 
-  <!-- USER SATISFACTION RATING THING -->
-  <div class="form-group">
-    <label><strong>How satisfied are you with your experience?</strong></label>
-    <div style="display: flex; gap: 10px; margin-top: 8px;">
-      <label><input type="radio" name="satisfaction" value="1" required /> 1</label>
-      <label><input type="radio" name="satisfaction" value="2" /> 2</label>
-      <label><input type="radio" name="satisfaction" value="3" /> 3</label>
-      <label><input type="radio" name="satisfaction" value="4" /> 4</label>
-      <label><input type="radio" name="satisfaction" value="5" /> 5</label>
-    </div>
-  </div>
-</section>
+            <!-- USER SATISFACTION RATING -->
+            <div class="form-group">
+              <label
+                ><strong
+                  >How satisfied are you with your experience?</strong
+                ></label
+              >
+              <div style="display: flex; gap: 10px; margin-top: 8px">
+                <label
+                  ><input type="radio" name="satisfaction" value="1" required />
+                  1</label
+                >
+                <label
+                  ><input type="radio" name="satisfaction" value="2" /> 2</label
+                >
+                <label
+                  ><input type="radio" name="satisfaction" value="3" /> 3</label
+                >
+                <label
+                  ><input type="radio" name="satisfaction" value="4" /> 4</label
+                >
+                <label
+                  ><input type="radio" name="satisfaction" value="5" /> 5</label
+                >
+              </div>
+            </div>
+          </section>
 
-<!-- REVIEW SUBMIT BUTTON -->
-<div class="form-actions">
-  <button id="submit-review" class="cta-btn" type="button">Submit Review</button>
-</div>
+          <!-- REVIEW SUBMIT BUTTON -->
+          <div class="form-actions">
+            <button id="submit-review" class="cta-btn" type="button">
+              Submit Review
+            </button>
+          </div>
 
+          <!-- NAVIGATION BUTTONS -->
+          <div class="form-actions">
+            <a href="index.html" class="cta-btn">Home</a>
+            <a href="categories.html" class="cta-btn">New Report</a>
+          </div>
+        </div>
+        <!-- .body-right end -->
+      </div>
+      <!-- .main-body end -->
 
-<!-- USER REVIEW SECTION ENDS -->
-<div class="form-actions">
-  <a href="index.html" class="cta-btn">Home</a>
-  <a href="categories.html" class="cta-btn">New Report</a>
-</div>
-
-    </div> <!-- .body-right end -->
-
-    </div> <!-- .main-body end -->
-
-    <!-- FOOTER -->
+      <!-- FOOTER -->
       <footer class="footer">
         <div class="footer-inner">
-            
-    <!-- LEFT SECTION -->
-      <div class="section-left">
-        <div class="footer-title">
-          <i class="fa-solid fa-location-dot"></i>
-          <span>Visit Us</span>
+          <!-- LEFT -->
+          <div class="section-left">
+            <div class="footer-title">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Visit Us</span>
+            </div>
+            <p class="footer-address">
+              Raphoe House Level 1/8<br />
+              Gloucester Park Road,<br />
+              Onehunga, Auckland 1061
+            </p>
+          </div>
+
+          <!-- CENTER -->
+          <div class="section-center">
+            <div class="footer-title">
+              <span>Need Help? Get In Touch</span>
+            </div>
+            <div class="contact-buttons">
+              <button class="contact-btn">
+                <i class="fa-solid fa-phone"></i>
+                <span>Phone</span>
+              </button>
+              <button class="contact-btn">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Email</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="section-right">
+            <div class="footer-title">
+              <i class="fa-solid fa-share-nodes"></i>
+              <span>Follow Us</span>
+            </div>
+            <div class="social-buttons">
+              <a class="social-btn" href="#"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a class="social-btn" href="#"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a class="social-btn" href="#"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a class="social-btn" href="#"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
         </div>
-          <p class="footer-address">
-            Raphoe House Level 1/8<br />
-            Gloucester Park Road,<br />
-            Onehunga, Auckland 1061
-          </p>
-      </div>
+      </footer>
 
-    <!-- CENTER SECTION -->
-    <div class="section-center">
-      <div class="footer-title">
-        <span>Need Help? Get In Touch</span>
-      </div>
-      <div class="contact-buttons">
-        <button class="contact-btn">
-          <i class="fa-solid fa-phone"></i>
-          <span>Phone</span>
-        </button>
-        <button class="contact-btn">
-          <i class="fa-solid fa-envelope"></i>
-          <span>Email</span>
-        </button>
+      <!-- REVIEW SUCCESS MODAL -->
+      <div id="review-success-modal" class="modal">
+        <div class="modal-content">
+          <h2>Thanks for your feedback!</h2>
+          <p>Your review has been submitted successfully.</p>
+          <button
+            class="cta-btn"
+            onclick="document.getElementById('review-success-modal').classList.remove('show')"
+          >
+            Close
+          </button>
+        </div>
       </div>
     </div>
-
-    <!-- RIGHT SECTION-->
-    <div class="section-right">
-      <div class="footer-title">
-        <i class="fa-solid fa-share-nodes"></i>
-        <span>Follow Us</span>
-      </div>
-      <div class="social-buttons">
-        <a class="social-btn" href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        <a class="social-btn" href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a class="social-btn" href="#"><i class="fa-brands fa-youtube"></i></a>
-        <a class="social-btn" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-      </div>
-    </div>
-  </div>
-</footer>
-</div>  
-
-<!-- REVIEW SUCCESS MODAL -->
-<div id="review-success-modal" style="display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6); z-index: 2000; display: flex; justify-content: center; align-items: center;">
-  <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; max-width: 400px; width: 90%;">
-    <h2 style="color: var(--color-secondary)">Thanks for your feedback!</h2>
-    <p>Your review has been submitted successfully.</p>
-    <button class="cta-btn" onclick="document.getElementById('review-success-modal').style.display='none'">Close</button>
-  </div>
-</div>
-
-
-<script>
-  // Optional: Capture and log ratings
-  document.querySelectorAll('input[type="radio"]').forEach(input => {
-    input.addEventListener('change', () => {
-      const appeal = document.querySelector('input[name="appeal"]:checked')?.value;
-      const satisfaction = document.querySelector('input[name="satisfaction"]:checked')?.value;
-      console.log('Appeal rating:', appeal);
-      console.log('Satisfaction rating:', satisfaction);
-    });
-  });
-</script>
-</body>
+    <!-- OPTIONAL INLINE JS – Only logs rating selections -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll('input[type="radio"]').forEach((input) => {
+          input.addEventListener("change", () => {
+            const appeal = document.querySelector(
+              'input[name="appeal"]:checked'
+            )?.value;
+            const satisfaction = document.querySelector(
+              'input[name="satisfaction"]:checked'
+            )?.value;
+            console.log("Appeal rating:", appeal);
+            console.log("Satisfaction rating:", satisfaction);
+          });
+        });
+      });
+    </script>
+  </body>
 </html>

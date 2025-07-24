@@ -1,4 +1,4 @@
-/* BASE */
+
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -14,19 +14,22 @@ body {
   line-height: 1.5;
   font-weight: var(--font-weight-regular);
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 p {
   max-width: 700px;
 }
+
 img {
   max-width: 100%;
   display: block;
 }
 
-/* LAYOUT CONTAINERS */
+
 .page-container {
   max-width: 100vw;
   display: flex;
@@ -34,7 +37,30 @@ img {
   min-height: 100vh;
 }
 
-/* HEADER */
+.main-body {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  margin-top: 6.25rem;
+  background-color: var(--color-background);
+}
+
+.body-left {
+  position: sticky;
+  top: 100px;
+  width: 20vw;
+  height: calc(100vh - 100px);
+  background: url("/Mission-4/Assets/Images/Rubbish.jpg") center/cover no-repeat;
+  border-radius: 0 100px 0 0;
+  flex-shrink: 0;
+  z-index: 0;
+}
+
+.body-right {
+  flex: 1;
+  padding: 0 24px;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -56,14 +82,13 @@ img {
   justify-content: space-between;
   padding: 20px;
   gap: 20px;
+  flex-direction: row;
 }
 
-/* LOGO */
 .logo {
   height: 50px;
 }
 
-/* SEARCH BAR */
 .search-bar {
   flex: 1;
   display: flex;
@@ -97,7 +122,6 @@ img {
   align-items: center;
 }
 
-/* NAV */
 .nav-buttons {
   display: flex;
   gap: 12px;
@@ -117,53 +141,21 @@ img {
   background-color: var(--color-secondary-dark);
 }
 
-/* MAIN CONTENT - Container */
-.main-body {
-  display: flex;
-  width: 100%;
-  min-height: calc(100vh - 100px);
-  margin-top: 6.25rem;
-  background-color: var(--color-background);
-}
-
-/* BODY LEFT - Fixed Side Image */
-.body-left {
-  position: sticky;
-  top: 100px;
-  width: 20vw;
-  height: calc(100vh - 100px);
-  /* BODY LEFT - BG Image */
-  background: url("/Assets/Images/Rubbish.jpg") center/cover no-repeat;
-  border-radius: 0 100px 0 0;
-  flex-shrink: 0;
-}
-
-/* BODY RIGHT - Scrollable Content */
-.body-right {
-  flex: 1;
-  padding: 0 24px;
-}
-
-/* HERO SECTION */
 .hero {
   position: relative;
   height: fit-content;
-  /* HERO SECTION - BG Image */
-  background: url("/Assets/Rubbish.jpg") center/cover no-repeat;
+  background: url("/Mission-4/Assets/Images/Rubbish.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: left;
   text-align: left;
-  color: var(
-    --color-white
-  ); /* Text Colour Will Be White Unless Overridden Below */
+  color: var(--color-white);
   overflow: hidden;
   border-radius: 10px 100px 10px 10px;
   margin-bottom: 1rem;
   padding-bottom: 2rem;
 }
 
-/* HERO SECTION - Gradient */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -171,7 +163,6 @@ img {
   z-index: 1;
 }
 
-/* HERO SECTION - Text */
 .hero-content {
   position: relative;
   display: flex;
@@ -184,7 +175,7 @@ img {
 .hero h1 {
   font-size: var(--font-size-title);
   font-weight: var(--font-weight-bold);
-  color: var(--color-secondary); /* Overridden Colour */
+  color: var(--color-secondary);
   margin-bottom: 0rem;
   margin-top: 2rem;
 }
@@ -203,9 +194,6 @@ img {
   margin-bottom: 2rem;
 }
 
-/* MAIN CONTENT */
-
-/* SECTION CONTENT - Parent Section Card*/
 .section-card {
   background: var(--color-white);
   border-radius: 10px;
@@ -214,7 +202,6 @@ img {
   padding: 1rem 2rem 2rem 2rem;
 }
 
-/* SECTION CONTENT - Child Section Cards (Modified Versions) */
 .section-card.introduction {
   background: var(--color-secondary-light);
   border: 1px solid var(--color-secondary);
@@ -237,7 +224,6 @@ img {
   font-weight: var(--font-weight-bold);
 }
 
-/* LIST STYLES */
 .list-basic,
 .list-ordered {
   padding-left: 20px;
@@ -254,29 +240,22 @@ li::marker {
   color: var(--color-secondary-dark);
 }
 
-/* FORM STYLES */
 .form-group {
   margin-bottom: 1.5rem;
   position: relative;
 }
 
-textarea {
+textarea,
+input[type="text"],
+input[type="date"],
+input[type="file"] {
   width: 100%;
   padding: 12px;
   border-radius: 10px;
   border: 1px solid var(--color-secondary);
+  font-family: var(--font-family-base);
   background: rgba(255, 255, 255, 0.8);
   resize: vertical;
-}
-
-input[type="date"],
-input[type="text"],
-input[type="file"] {
-  width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid var(--color-secondary);
-  font-family: inherit;
 }
 
 .upload-area {
@@ -329,7 +308,38 @@ input[type="file"] {
   cursor: not-allowed;
 }
 
-/* BODY BUTTONS */
+/* Dropdown Select */
+.dropdown-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-p);
+}
+
+.dropdown-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-secondary);
+  background-color: var(--color-white);
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+  font-family: var(--font-family-base);
+}
+
+.dropdown-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+#next-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+
 .cta-btn {
   display: inline-block;
   background: var(--color-secondary);
@@ -340,12 +350,12 @@ input[type="file"] {
   font-weight: var(--font-weight-semibold);
   margin-top: 16px;
   cursor: pointer;
+  border: none;
 }
 .cta-btn:hover {
   background: var(--color-secondary-dark);
 }
 
-/* FOOTER */
 .footer {
   width: 100%;
   background: var(--color-secondary-dark);
@@ -364,7 +374,6 @@ input[type="file"] {
   flex-wrap: wrap;
 }
 
-/* FOOTER - Sections */
 .section-left,
 .section-center,
 .section-right {
@@ -377,7 +386,6 @@ input[type="file"] {
   gap: 1rem;
 }
 
-/* FOOTER - Section Headings */
 .footer-title {
   display: flex;
   align-items: center;
@@ -392,7 +400,6 @@ input[type="file"] {
   margin: 0;
 }
 
-/* FOOTER - Contact Buttons */
 .contact-buttons {
   display: flex;
   gap: 12px;
@@ -419,7 +426,6 @@ input[type="file"] {
   color: var(--color-white);
 }
 
-/* FOOTER - Social Media Buttons */
 .social-buttons {
   display: flex;
   gap: 12px;
@@ -444,13 +450,13 @@ input[type="file"] {
   color: var(--color-white);
 }
 
-/* DESKTOP RESPONSIVENESS */
 @media (max-width: 1024px) {
   .main-body {
     flex-direction: column;
     height: auto;
-    margin-top: 100px; /* Keep Below Header */
+    margin-top: 100px;
   }
+
   .body-left {
     flex: 0 0 auto;
     height: 300px;
@@ -459,19 +465,23 @@ input[type="file"] {
     border-radius: 0 0 20px 20px;
     background-position: center top;
   }
+
   .body-right {
     flex: 1 1 auto;
     height: auto;
     overflow-y: visible;
     padding: 16px;
   }
+
   .header-inner {
     flex-direction: column;
     gap: 12px;
   }
+
   .search-bar {
     width: 100%;
   }
+
   .hero {
     justify-content: center;
     text-align: center;
@@ -479,18 +489,39 @@ input[type="file"] {
     margin-left: 0;
     margin-right: 0;
   }
+
   .hero-content {
     margin-left: 0;
     padding: 0 16px;
     max-width: 100%;
   }
+
   .hero h1 {
     font-size: 2.2rem;
   }
+
   .hero h2 {
     font-size: 1.6rem;
   }
+
   .section-card h3 {
     font-size: 20px;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1001;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background: var(--color-white);
+    padding: 12px 0;
+    border-top: 1px solid var(--color-secondary-light);
   }
 }
