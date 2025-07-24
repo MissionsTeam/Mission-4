@@ -215,7 +215,6 @@ img {
 .section-card {
   background: var(--color-white);
   border-radius: 10px;
-  box-shadow: var(--shadow-medium);
   margin-bottom: 1.2rem;
   padding: 1rem 2rem 2rem 2rem;
 }
