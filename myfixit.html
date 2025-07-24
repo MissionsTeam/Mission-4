@@ -89,6 +89,13 @@
 
         <!-- myFixIt POINTS SECTION -->
         <section class="points-row">
+          
+          <a href="categories.html" class="section-card points submit-btn">
+            <div class="points-content">
+              <h2>New Report</h2>
+            </div>
+          </a>
+
           <div class="section-card points">
             <div class="points-content">
               <h2>FixIt Points</h2>
@@ -102,12 +109,6 @@
               <p>10</p>
             </div>
           </div>
-
-          <a href="categories.html" class="section-card points submit-btn">
-            <div class="points-content">
-              <h2>New Report</h2>
-            </div>
-          </a>
         </section>
 
       
@@ -228,7 +229,32 @@
       </div>
     </footer>
   </div>
+      <!-- Chatbox -->
+    <div class="chatbox-container">
+      <div class="chatbox-header">
+        <h4>Chat Support</h4>
+        <button class="chatbox-close" aria-label="Close chat">&times;</button>
+      </div>
 
+      <div
+        class="chatbox-messages"
+        aria-live="polite"
+        aria-atomic="false"
+      ></div>
+
+      <form class="chatbox-form" autocomplete="off">
+        <input
+          type="text"
+          placeholder="Ask me something..."
+          aria-label="Type your question"
+          required
+          autocomplete="off"
+        />
+        <button type="submit" aria-label="Send message">Send</button>
+      </form>
+    </div>
+  <!-- Chatbox toggle button -->
+    <button class="chatbox-toggle" aria-label="Open chat">💬</button>
   <!-- JavaScript for Mobile Menu -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -263,6 +289,155 @@
         closeMobileMenu();
       }
     });
+
+          // Chatbox elements
+      const chatToggle = document.querySelector(".chatbox-toggle");
+      const chatContainer = document.querySelector(".chatbox-container");
+      const chatClose = document.querySelector(".chatbox-close");
+      const chatForm = document.querySelector(".chatbox-form");
+      const chatMessages = document.querySelector(".chatbox-messages");
+
+      // Preset Q&A — combined into one array properly
+      const chatQA = [
+        {
+          questions: ["hello", "hi", "hey"],
+          answer:
+            "Hi there! How can I help you report or track an issue in your neighborhood today?",
+        },
+        {
+          questions: ["hours", "open", "close"],
+          answer: "Our working hours are Monday to Friday, 9am to 6pm.",
+        },
+        {
+          questions: ["services", "offer", "what do you do"],
+          answer:
+            "We offer web design, coding tutorials, and business analyst resources.",
+        },
+        {
+          questions: [
+            "contact",
+            "phone",
+            "email",
+            "help",
+            "support",
+            "need assistance",
+          ],
+          answer:
+            "You can contact us at support@example.com or call 123-456-7890.",
+        },
+        {
+          questions: ["thank you", "thanks", "great", "good job"],
+          answer:
+            "You're welcome! Feel free to ask if you have more questions.",
+        },
+        {
+          questions: [
+            "how to report",
+            "report issue",
+            "file complaint",
+            "report problem",
+          ],
+          answer:
+            "To report an issue, just click the 'Report Issue' button, fill out the form with details and submit.",
+        },
+        {
+          questions: [
+            "what kind of issues",
+            "issue types",
+            "reportable problems",
+            "problem types",
+          ],
+          answer:
+            "You can report issues like potholes, broken streetlights, graffiti, noise complaints, or rubbish problems.",
+        },
+        {
+          questions: [
+            "can i track",
+            "track issue",
+            "follow up",
+            "status update",
+          ],
+          answer:
+            "Yes! You can track the status of your reports by logging into your account and visiting 'My Reports'.",
+        },
+        {
+          questions: [
+            "who sees my report",
+            "who gets notified",
+            "report visibility",
+            "is it private",
+          ],
+          answer:
+            "Your report goes directly to the local council and relevant community teams. Your personal info stays confidential.",
+        },
+        {
+          questions: [
+            "how long to fix",
+            "fix time",
+            "response time",
+            "how fast",
+          ],
+          answer:
+            "Response times vary, but most issues are addressed within 3-7 business days.",
+        },
+      ];
+
+      // Helper: find answer based on user input
+      function getBotAnswer(message) {
+        const msg = message.toLowerCase();
+
+        for (const qa of chatQA) {
+          if (qa.questions.some((q) => msg.includes(q))) {
+            return qa.answer;
+          }
+        }
+        return "Sorry, I didn't understand that. Can you try asking something else?";
+      }
+
+      // Show message function
+      function addMessage(text, sender) {
+        const msgDiv = document.createElement("div");
+        msgDiv.classList.add("message", sender);
+        msgDiv.textContent = text;
+        if (chatMessages) {
+          chatMessages.appendChild(msgDiv);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+      }
+
+      if (chatToggle && chatContainer) {
+        // Toggle chat open/close
+        chatToggle.addEventListener("click", () => {
+          chatContainer.classList.add("active");
+          chatToggle.style.display = "none";
+        });
+      }
+
+      if (chatClose && chatToggle && chatContainer) {
+        chatClose.addEventListener("click", () => {
+          chatContainer.classList.remove("active");
+          chatToggle.style.display = "flex";
+        });
+      }
+
+      if (chatForm) {
+        // Handle user message submit
+        chatForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const input = chatForm.querySelector("input");
+          const userText = input.value.trim();
+          if (!userText) return;
+
+          addMessage(userText, "user");
+          input.value = "";
+
+          // Simulate bot thinking delay
+          setTimeout(() => {
+            const answer = getBotAnswer(userText);
+            addMessage(answer, "bot");
+          }, 600);
+        });
+      }
   </script>
 </body>
 </html>
