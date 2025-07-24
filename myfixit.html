@@ -22,206 +22,247 @@
     <header class="header">
       <div class="header-inner">
         <img src="Assets/Images/Logo.png" alt="FixIt Logo" class="logo" />
-          <form class="search-bar" action="/search" role="search" aria-label="Search FixIt">
-            <input type="text" name="q" placeholder="Search FixIt" aria-label="Search input" />
-            <button type="submit">
-              <i class="fa fa-search" aria-hidden="true"></i>
-              <span class="sr-only">Search</span>
-            </button>
-          </form>
+        <form class="search-bar" action="/search" role="search" aria-label="Search FixIt">
+          <input type="text" name="q" placeholder="Search FixIt" aria-label="Search input" />
+          <button type="submit">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <span class="sr-only">Search</span>
+          </button>
+        </form>
+
+        <!-- Desktop Navigation -->
         <nav class="nav-buttons">
-          <a href="#" class="nav-btn">Menu</a>
-          <a href="#" class="nav-btn login">myFixIt</a>
+          <div class="nav-dropdown">
+            <button class="nav-btn dropdown-toggle">
+              Menu <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-menu">
+              <a href="#getting-started">Getting Started</a>
+              <a href="#our-mission">Our Mission</a>
+              <a href="testimonials.html">Community Voice</a>
+              <a href="login.html">myFixIt</a>
+            </div>
+          </div>
+          <a href="login.html" class="nav-btn login">myFixIt</a>
         </nav>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav">
+          <div class="hamburger" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#getting-started" onclick="closeMobileMenu()">Getting Started</a>
+        <a href="#our-mission" onclick="closeMobileMenu()">Our Mission</a>
+        <a href="testimonials.html" onclick="closeMobileMenu()">Community Voice</a>
+        <a href="login.html" onclick="closeMobileMenu()">myFixIt</a>
       </div>
     </header>
 
     <!-- MAIN BODY -->
     <div class="main-body">
 
-    <!-- LEFT BODY -->
-      <div class="body-left">
-      </div>
+      <!-- LEFT BODY -->
+      <div class="body-left"></div>
 
-    <!-- RIGHT BODY -->
-    <div class="body-right" id="main-content" role="main">
+      <!-- RIGHT BODY -->
+      <div class="body-right" id="main-content" role="main">
 
-    <!-- HERO SECTION -->
+        <!-- HERO SECTION -->
         <section class="hero">
           <div class="hero-overlay"></div>
           <div class="hero-content">
             <h1>myFixIt</h1>
             <h2>Welcome, Amina</h2>
-          <p class="hero-subtitle">
-            Nau Mai, Haere Mai<br />
-            <em>Welcome to your FixIt account</em>
+            <p class="hero-subtitle">
+              Nau Mai, Haere Mai<br />
+              <em>Welcome to your FixIt account</em>
             </p>
           </div>
         </section>
 
-    <!-- myFixIt POINTS SECTION -->
-        <section class="section-card points">
-        <div class="points-left">
-          <h2>Your FixIt Stats:</h2>
-        </div>
-        <div class="points-middle">
-          <ul class="scoreboard">
-            <li>
+        <!-- myFixIt POINTS SECTION -->
+        <section class="points-row">
+          <div class="section-card points">
+            <div class="points-content">
               <h2>FixIt Points</h2>
-              <p><span class="scoreboard-badge">132</span></p>
-            </li>
-            <li>
+              <p>132</p>
+            </div>
+          </div>
+
+          <div class="section-card points">
+            <div class="points-content">
               <h2>Total Reports</h2>
-              <p><span class="scoreboard-badge">10</span></p>
-            </li>
-          </ul>
-        </div>
-        <div class="points-right">
-          <a href="categories.html" class="btn-submit-report">
-            <i class="fa-solid fa-plus"></i> New Report
+              <p>10</p>
+            </div>
+          </div>
+
+          <a href="categories.html" class="section-card points submit-btn">
+            <div class="points-content">
+              <h2>New Report</h2>
+            </div>
           </a>
-        </div>
-      </section>
-    <!-- PENDING REPORTS -->
-      <section class="section-card">
-        <div class="section-header">
-            <h2><span class="badge">4</span> Pending Reports</h2>          
-          <div class="see-all-wrapper">
-            <a href="categories.html" class="btn-see-all">See All</a> 
-        </div>
-      </div>
-        <div class="section-content flex-container">
-          <div class="item">
-            <p><strong>Broken Streetlights</strong><br>
-              Te Atatu Peninsula<br>
-              Submitted 5 mins ago<br>
-              <em>Status: Pending</em>
-            </p>
-            <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
-          </div>
-          <div class="item">
-            <p><strong>Overflowing Bins</strong><br>
-              Henderson<br>
-              Submitted 15 mins ago<br>
-              <em>Status: Pending</em>
-            </p>
-            <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
-          </div>
-          <div class="item">
-            <p><strong>Potholes</strong><br>
-              Glen Eden<br>
-              Submitted 5 Hours ago<br>
-              <em>Status: Pending</em>
-            </p>
-            <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
-          </div>
-          <div class="item">
-            <p><strong>Overgrown Grass and Weeds</strong><br>
-              Glendene<br>
-              Submitted 2 Days ago<br>
-              <em>Status: Pending</em>
-            </p>
-            <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
-          </div>
-        </div>
-      </section>
+        </section>
 
+      
+        <!-- PENDING REPORTS -->
+        <section class="section-card">
+          <div class="section-header">
+            <h2><span class="badge">4</span> Pending Reports</h2>
+            <div class="see-all-wrapper">
+              <a href="categories.html" class="btn-see-all">See All</a>
+            </div>
+          </div>
+          <div class="section-content flex-container">
+            
+            <div class="item">
+              <p><strong>Broken Streetlights</strong><br>Te Atatu Peninsula<br>Submitted 5 mins ago<br><em>Status: Pending</em></p>
+              <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
+            </div>
+            <div class="item">
+              <p><strong>Overflowing Bins</strong><br>Henderson<br>Submitted 15 mins ago<br><em>Status: Pending</em></p>
+              <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
+            </div>
+            <div class="item">
+              <p><strong>Potholes</strong><br>Glen Eden<br>Submitted 5 Hours ago<br><em>Status: Pending</em></p>
+              <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
+            </div>
+            <div class="item">
+              <p><strong>Overgrown Grass and Weeds</strong><br>Glendene<br>Submitted 2 Days ago<br><em>Status: Pending</em></p>
+              <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
+            </div>
+          </div>
+        </section>
 
-    <!-- RESOLVED REPORTS -->
-      <section class="section-card">
-        <div class="section-header">
-            <h2><span class="badge">6</span> Resolved Reports</h2>          
-          <div class="see-all-wrapper">
-            <a href="categories.html" class="btn-see-all">See All</a> 
-        </div>
-      </div>
-      <div class="section-content flex-container">
-        <div class="item">
-          <p><strong>Illegal Rubbish Dumping</strong><br>
-          Glen Eden<br>Submitted 2 days ago<br><em>Status: Resolved</em></p>
-          <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
-        </div>
-        <div class="item">
-          <p><strong>Oil Spill in Storm Drain</strong><br>
-          Te Atatū Peninsula<br>Submitted 4 days ago<br><em>Status: Resolved</em></p>
-          <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
-        </div>
-        <div class="item">
-          <p><strong>Abandoned Tyres on Roadside</strong><br>
-          Massey<br>Submitted 1 week ago<br><em>Status: Resolved</em></p>
-          <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
-        </div>
-        <div class="item">
-          <p><strong>Overgrown Weeds Blocking Footpath</strong><br>
-          New Lynn<br>Submitted 3 days ago<br><em>Status: Resolved</em></p>
-          <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
-        </div>
-        <div class="item">
-          <p><strong>Graffiti on Public Park Sign</strong><br>
-          Henderson<br>Submitted 6 days ago<br><em>Status: Resolved</em></p>
-          <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
-        </div>
-        <div class="item">
-          <p><strong>Abandoned Shopping Trolleys in Creek</strong><br>
-          Kelston<br>Submitted 5 days ago<br><em>Status: Resolved</em></p>
-          <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
-        </div>
-      </div>
-    </section>
+        <!-- RESOLVED REPORTS -->
+        <section class="section-card">
+          <div class="section-header">
+            <h2><span class="badge">6</span> Resolved Reports</h2>
+            <div class="see-all-wrapper">
+              <a href="categories.html" class="btn-see-all">See All</a>
+            </div>
+          </div>
+          <div class="section-content flex-container">
+            <div class="item">
+              <p><strong>Illegal Rubbish Dumping</strong><br>Glen Eden<br>Submitted 2 days ago<br><em>Status: Resolved</em></p>
+              <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
+            </div>
+            <div class="item">
+              <p><strong>Oil Spill in Storm Drain</strong><br>Te Atatū Peninsula<br>Submitted 4 days ago<br><em>Status: Resolved</em></p>
+              <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
+            </div>
+            <div class="item">
+              <p><strong>Abandoned Tyres on Roadside</strong><br>Massey<br>Submitted 1 week ago<br><em>Status: Resolved</em></p>
+              <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
+            </div>
+            <div class="item">
+              <p><strong>Overgrown Weeds Blocking Footpath</strong><br>New Lynn<br>Submitted 3 days ago<br><em>Status: Resolved</em></p>
+              <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
+            </div>
+            <div class="item">
+              <p><strong>Graffiti on Public Park Sign</strong><br>Henderson<br>Submitted 6 days ago<br><em>Status: Resolved</em></p>
+              <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
+            </div>
+            <div class="item">
+              <p><strong>Abandoned Shopping Trolleys in Creek</strong><br>Kelston<br>Submitted 5 days ago<br><em>Status: Resolved</em></p>
+              <span class="report-link">See full report <i class="fa-solid fa-circle-arrow-right"></i></span>
+            </div>
+          </div>
+        </section>
 
-    </div> <!-- .body-right end -->
-
+      </div> <!-- .body-right end -->
     </div> <!-- .main-body end -->
 
     <!-- FOOTER -->
-      <footer class="footer">
-        <div class="footer-inner">
-            
-    <!-- LEFT SECTION -->
-      <div class="section-left">
-        <div class="footer-title">
-          <i class="fa-solid fa-location-dot"></i>
-          <span>Visit Us</span>
-        </div>
+    <footer class="footer">
+      <div class="footer-inner">
+        <!-- LEFT SECTION -->
+        <div class="section-left">
+          <div class="footer-title">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Visit Us</span>
+          </div>
           <p class="footer-address">
             Raphoe House Level 1/8<br />
             Gloucester Park Road,<br />
             Onehunga, Auckland 1061
           </p>
-      </div>
+        </div>
 
-    <!-- CENTER SECTION -->
-    <div class="section-center">
-      <div class="footer-title">
-        <span>Need Help? Get In Touch</span>
-      </div>
-      <div class="contact-buttons">
-        <button class="contact-btn">
-          <i class="fa-solid fa-phone"></i>
-          <span>Phone</span>
-        </button>
-        <button class="contact-btn">
-          <i class="fa-solid fa-envelope"></i>
-          <span>Email</span>
-        </button>
-      </div>
-    </div>
+        <!-- CENTER SECTION -->
+        <div class="section-center">
+          <div class="footer-title">
+            <span>Need Help? Get In Touch</span>
+          </div>
+          <div class="contact-buttons">
+            <button class="contact-btn">
+              <i class="fa-solid fa-phone"></i>
+              <span>Phone</span>
+            </button>
+            <button class="contact-btn">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Email</span>
+            </button>
+          </div>
+        </div>
 
-    <!-- RIGHT SECTION-->
-    <div class="section-right">
-      <div class="footer-title">
-        <i class="fa-solid fa-share-nodes"></i>
-        <span>Follow Us</span>
+        <!-- RIGHT SECTION -->
+        <div class="section-right">
+          <div class="footer-title">
+            <i class="fa-solid fa-share-nodes"></i>
+            <span>Follow Us</span>
+          </div>
+          <div class="social-buttons">
+            <a class="social-btn" href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a class="social-btn" href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a class="social-btn" href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a class="social-btn" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
       </div>
-      <div class="social-buttons">
-        <a class="social-btn" href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        <a class="social-btn" href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a class="social-btn" href="#"><i class="fa-brands fa-youtube"></i></a>
-        <a class="social-btn" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-      </div>
-    </div>
+    </footer>
   </div>
-</footer>
-</div>  
+
+  <!-- JavaScript for Mobile Menu -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById("mobileMenu");
+      const hamburger = document.querySelector(".hamburger");
+      mobileMenu.classList.toggle("active");
+      hamburger.classList.toggle("active");
+    }
+
+    function closeMobileMenu() {
+      const mobileMenu = document.getElementById("mobileMenu");
+      const hamburger = document.querySelector(".hamburger");
+      mobileMenu.classList.remove("active");
+      hamburger.classList.remove("active");
+    }
+
+    document.addEventListener("click", function (event) {
+      const mobileMenu = document.getElementById("mobileMenu");
+      const hamburger = document.querySelector(".hamburger");
+      const mobileNav = document.querySelector(".mobile-nav");
+
+      if (!mobileNav.contains(event.target) && !mobileMenu.contains(event.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 768) {
+        closeMobileMenu();
+      }
+    });
+  </script>
 </body>
 </html>
